@@ -1,0 +1,71 @@
+# Sources, assumptions and booking checks
+
+Research date: **22 October 2026**. Links support destination and seasonal information. They do not confirm availability, timetables, fares, restaurant opening or event programmes for 25 December 2026–3 January 2027.
+
+## Primary destination and climate references
+
+- [Yunnan tourism: Kunming rice noodles](https://www.visityunnanchina.com/experiences/food/summary-kunming-rice-noodles).
+- [Kunming: market culture and Zhuanxin snacks](https://m.kunming.cn/en/c/2023-08-31/13751486.shtml).
+- [Linden Centre: Xizhou programme](https://www.linden-centre.com/uploadfile/2025/0525/20250525132439149.pdf), a local accommodation/cultural operator's own description of village markets and bread-making.
+- [Yunnan tourism: seasonal food and mushrooms](https://www.visityunnanchina.com/plan-your-trip/travel-blog/yunnan-many-splendoured-life05).
+- [Yunnan tourism: Lijiang Old Town](https://www.visityunnanchina.com/culture/ethnic-villages-ancient-towns/old-town-lijiang).
+- [UNESCO: Chengdu](https://www.unesco.org/en/creative-cities/chengdu).
+- [UNESCO: Quanzhou](https://www.unesco.org/en/creative-cities/quanzhou).
+- [UNESCO: Shunde](https://www.unesco.org/en/creative-cities/shunde).
+- [Quanzhou city: local food culture](https://www.quanzhou.gov.cn/gastronomy/en/Updates/news/202512/t20251218_3243157.htm).
+- [Fujian: Quanzhou food](https://www.gofujian.com.cn/quanzhou/food.html).
+- [WMO/CMA: Chengdu climate](https://worldweather.wmo.int/en/city.html?cityId=547).
+- [WMO/CMA: Xiamen climate](https://worldweather.wmo.int/en/city.html?cityId=563).
+- [Chongqing visitor climate guide](https://welcomecq.cn/plan/climate-and-weather/).
+- [Harbin Ice and Snow World operator](https://ice.hrbicesnow.com/): check the current season's notice directly before selecting an event-based trip. This link is a verification destination, not evidence that any specific date is confirmed.
+
+## Other references
+
+- [Naxi food-culture research](https://www.atlantis-press.com/article/125989230.pdf), used for dish identification, not current restaurant recommendations.
+- [Kunming–Dali–Lijiang rail route reference](https://www.travelchinaguide.com/china-trains/kunming-lijiang.htm).
+- [Chengdu–Chongqing rail route reference](https://www.travelchinaguide.com/china-trains/high-speed/chongqing-chengdu.htm).
+- [Jianshui food overview](https://english.visitbeijing.com.cn/article/47OOSrL5D9Q).
+- [MTR: booking through China Railway 12306](https://www.highspeed.mtr.com.hk/en/latest-news/ticketing-via-12306-purchase-ticket.html).
+
+Rail route references are indicative, third-party summaries. Final services, station choices, fares and sale dates must be checked through China Railway 12306. Its normal ticket-sales window is around 15 days; an advance request with an agent does not itself establish an issued ticket. Check current rules when booking.
+
+## Open decisions
+
+- [x] Destination: Yunnan selected.
+- [ ] Group's previous visits and preferences for the optional mountain day.
+- [ ] Per-person budget, room sharing and dietary requirements.
+- [ ] Your location on 24 December: Hong Kong, Shanghai or elsewhere.
+- [ ] Each person's onward destination on 3 January.
+- [ ] Exact flights from Hong Kong and Bangkok, airports, baggage and arrival times.
+- [ ] Actual passport / mainland travel document and entry eligibility for each traveller, including January 2027.
+- [ ] Refundable hotels, room heating and New Year dinner arrangements.
+- [ ] Rail services when the applicable booking window opens.
+- [ ] Any mountain excursion or seasonal event, with current operator information.
+
+## Detailed HTML itinerary
+
+The selected Yunnan route is presented in [index.html](index.html), with daily time
+blocks, city filters, an adjustable allowance calculator, a local checklist,
+print/PDF support and downloadable rail-release reminders.
+
+Additional references checked for the detailed plan:
+
+- [Yunnan tourism: Xizhou Ancient Town](https://www.visityunnanchina.com/node/290).
+- [China Culture: Bai tie-dye in Zhoucheng](https://en.chinaculture.org/a/202606/12/WS6a2b3371a310d6866eb4dcf1.html).
+- [Dali–Lijiang indicative rail times](https://www.travelchinaguide.com/china-trains/dali-lijiang.htm).
+- [China Railway 12306: published 15-day window including the travel day](https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/crossBorderPassenger.html), in its cross-border rules; verify the current domestic sale window and station-specific release times before booking.
+- [Jade Dragon Snow Mountain visitor reference](https://www.travelchinaguide.com/attraction/yunnan/lijiang/jade_dragon.htm).
+- [CDC: travel to high altitudes](https://wwwnc.cdc.gov/travel/page/travel-to-high-altitudes).
+
+Time blocks, hotel-to-hotel transfer buffers and adjustable spending allowances are
+planning choices rather than confirmed schedules or supplier quotes. Under the
+normal 15-day inclusive window, the indicative first sale dates for the three
+rail journeys are 13, 16 and 19 December respectively. Calendar downloads are
+all-day reminders to check sales, not assertions of an exact release time.
+
+## Relationship to the parent trip
+
+The existing `winter-trip.html` remains the broader itinerary. It and all other
+files outside `China Sub-trip` are read-only for the HTML itinerary task. No
+master-file changes are made by this task. Homeward flight details in the broader
+itinerary have not been reverified here.
