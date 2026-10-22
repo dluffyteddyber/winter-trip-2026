@@ -67,14 +67,45 @@ main.wrap{padding-top:28px}main>section{margin:0 0 28px;padding:20px;border:1px 
 .food-item b{font-size:14px}.food-item p{font-size:12px;line-height:1.6}.food-item .cn{font-size:12px}.season-note{font-size:13px;background:var(--rust-pale);border-radius:5px}
 th{font-size:10px}td{font-size:13px}.stay-grid{gap:24px;margin-top:25px}.stay-grid h3{font-size:14px}.stay-grid p{font-size:13px}
 .budget-layout,.booking-layout{gap:35px}.budget-control label{font-size:13px}.budget-control output{color:var(--accent);font-size:13px}.budget-control small,.budget-foot{font-size:12px}
+.money-pair{display:inline-flex;align-items:baseline;flex-wrap:wrap;column-gap:5px;row-gap:0;max-width:100%}.rmb-amount{white-space:nowrap}.fx-note{font:400 11px/1.5 var(--sans);color:var(--muted);letter-spacing:0;white-space:nowrap}
+.budget-control label{align-items:baseline;flex-wrap:wrap}.budget-control output{white-space:normal;text-align:right;margin-left:auto}.budget-control .money-pair{justify-content:flex-end}
+.budget-total dl div{align-items:baseline;gap:8px}.budget-total dt{flex:1;min-width:0}.budget-total dd{flex:0 1 55%;min-width:0;text-align:right}.budget-total dd .money-pair{justify-content:flex-end}
+.budget-total .amount .money-pair{column-gap:10px}.budget-total .amount .fx-note{font:500 14px/1.5 var(--sans)}.budget-total .group-total .fx-note{font-size:12px}
+.currency-note{font-size:12px;line-height:1.8;color:var(--muted);margin:20px 0 0;padding-top:12px;border-top:1px solid var(--line)}.currency-note a{white-space:nowrap}
 .budget-total{background:var(--blue-pale);color:var(--ink);border:1px solid color-mix(in srgb,var(--blue) 40%,var(--line));border-radius:8px;padding:20px}
 .budget-total .eyebrow,.budget-total .group-total{color:var(--muted)}.budget-total .amount{font:600 40px/1.25 var(--display);letter-spacing:-.02em;color:var(--blue);margin:10px 0 4px}.budget-total dl div{border-color:var(--line);font-size:13px}
 .booking-layout h3{font:600 18px var(--display)}.release .release-date{font:500 25px/1.1 var(--mono);color:var(--accent)}.release .release-date small{font-size:10px}.release p{font-size:13px}.checklist label{font-size:13px}.checklist small{font-size:12px}
 .source-list{font-size:12px;line-height:1.6}.source-list small{font-size:11px}.photo-credits-note{font-size:12px;color:var(--muted);margin:18px 0 0;border-top:1px solid var(--line);padding-top:14px}
 footer.wrap{font-size:10px;padding-top:0;padding-bottom:35px}
+.top-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.language-switch{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:var(--surface)}
+.language-switch button{border:0;background:transparent;color:var(--ink);padding:7px 12px;font:500 12px/1.5 var(--sans);min-height:35px}
+.language-switch button+button{border-left:1px solid var(--line)}
+.language-switch button[aria-pressed=true]{background:var(--ink);color:var(--surface)}
+.language-switch button:hover{background:var(--bg);color:var(--ink)}
+:root:lang(zh){--display:'Microsoft JhengHei','PingFang TC',system-ui,sans-serif;--sans:'Microsoft JhengHei','PingFang TC',system-ui,sans-serif;--mono:'IBM Plex Mono','Microsoft JhengHei','PingFang TC',monospace}
+html:lang(zh) body{line-height:1.8}
+html:lang(zh) .eyebrow,html:lang(zh) .city-label,html:lang(zh) .brand,html:lang(zh) th{letter-spacing:0;text-transform:none}
+html:lang(zh) .hero h1{line-height:1.4;letter-spacing:0;font-size:clamp(27px,4.2vw,40px)}
+html:lang(zh) .section-head h2,html:lang(zh) .day-heading h3,html:lang(zh) .route-stop h3{line-height:1.5}
+html:lang(zh) .slots p,html:lang(zh) .food-item p,html:lang(zh) .hero .intro{line-height:1.85}
+html:lang(zh) .route-stop h3 span[lang="zh"],html:lang(zh) .slots strong span[lang="zh"],html:lang(zh) .day-note span[lang="zh"]{display:none}
+html:lang(zh) .food-item .cn::before{content:'店家菜名：'}
+:root:lang(th){--display:'Leelawadee UI','Tahoma',system-ui,sans-serif;--sans:'Leelawadee UI','Tahoma',system-ui,sans-serif;--mono:'IBM Plex Mono','Leelawadee UI','Tahoma',monospace}
+html:lang(th) body{line-height:1.8}
+html:lang(th) .eyebrow,html:lang(th) .city-label,html:lang(th) .brand,html:lang(th) th{letter-spacing:0;text-transform:none}
+html:lang(th) .hero h1{line-height:1.35;font-size:clamp(28px,4.2vw,40px)}
+html:lang(th) .section-head h2,html:lang(th) .food-column h3,html:lang(th) .aside h3,html:lang(th) .booking-layout h3{line-height:1.6}
+html:lang(th) .day-heading h3,html:lang(th) .route-stop h3{line-height:1.6}
+html:lang(th) .slots p,html:lang(th) .food-item p,html:lang(th) .hero .intro{line-height:1.9}
+html:lang(th) .overview{grid-template-rows:27px 26px 42px 43px 48px}
+html:lang(th) .ov-segment,html:lang(th) .ov-focus{line-height:1.6}
+html:lang(th) .date-stamp{line-height:1.8}
+html:lang(th) .source-list,html:lang(th) .trip-photo figcaption{line-height:1.8}
 @media(max-width:900px){.timeline-layout{gap:24px;grid-template-columns:minmax(0,1.6fr) minmax(220px,1fr)}.day-body{padding-left:0}.trip-photo img{height:230px}.route-stop img{height:110px}.food-photo img{height:155px}}
 @media(max-width:700px){
  header.wrap{padding-top:24px}.topline a{font-size:10px}.brand{font-size:10px}.hero{margin-top:16px}.hero h1{font-size:34px;letter-spacing:-.01em;margin-top:6px}.hero .intro{font-size:14px;line-height:1.65}.hero .date{font-size:11px}.hero-facts{gap:12px 24px}.hero-facts dd{font-size:13px}.hero-facts dt{font-size:11px}.notice{margin-top:18px}.notice p{font-size:12px}.notice strong{font-size:12px}
+ .top-actions{width:100%;justify-content:space-between;gap:10px}.language-switch button{min-height:40px;padding:7px 13px}html:lang(th) .hero h1{font-size:30px}html:lang(th) .hero-facts{gap:12px 19px}html:lang(th) .day-heading h3{font-size:15px}html:lang(th) .date-stamp{font-size:9px}
  .nav-inner{padding:10px 0}.nav-links{gap:19px}.nav-links a{font-size:12px}main.wrap{padding-top:20px}main>section{padding:16px;margin-bottom:20px}.section-head{margin-bottom:17px}.section-head h2{font-size:21px}.section-head p{margin-top:10px;font-size:12px}
  .route-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:17px}.route-stop img{height:120px}.route-stop h3{font-size:15px;margin-left:10px;margin-right:10px}.route-stop p{font-size:9px;margin-inline:10px}.route-stop .num{font-size:9px;margin-inline:10px}.route-stop small{font-size:11px;margin-inline:10px}.route-caption{font-size:11px}
  .overview-scroll{margin-right:-16px;padding-right:16px}.overview{min-width:800px;grid-template-columns:76px repeat(10,minmax(0,1fr))}.ov-label{font-size:11px}.ov-legend{font-size:10px;gap:10px}
@@ -84,6 +115,7 @@ footer.wrap{font-size:10px;padding-top:0;padding-bottom:35px}
  .budget-layout,.booking-layout{grid-template-columns:minmax(0,1fr);gap:25px}.budget-total .amount{font-size:35px}.booking-layout h3{font-size:17px}.source-list{grid-template-columns:minmax(0,1fr);padding-left:16px;overflow-wrap:anywhere}.table-scroll{margin-right:-16px;padding-right:16px}.small-button{font-size:11px}.nav-inner>.small-button{display:none}
 }
 @media print{
+ .language-switch{display:none!important}
  :root{--bg:#fff;--surface:#fff;--ink:#18212D;--muted:#5A6573;--line:#D5DBE2;--accent:#C2362B;--c-kunming:#1E7A70;--c-dali:#B4761A;--c-lijiang:#3C5A8A;color-scheme:light}
  .wrap{width:100%;max-width:none}header.wrap{padding:0}.hero h1{font-size:30px}.hero{margin-top:12px}.hero .intro{font-size:12px}.notice{margin-top:12px;padding:8px 10px}main.wrap{padding-top:18px}main>section{padding:14px;margin-bottom:18px}.section-head h2{font-size:19px}.section-head p{font-size:11px}.route-strip{gap:8px}.route-stop img{height:85px}.overview{min-width:0;font-size:9px;grid-template-columns:65px repeat(10,minmax(0,1fr))}.ov-segment,.ov-focus{font-size:8px}.ov-label{font-size:10px}.ov-date,.ov-weekday{font-size:9px}.overview-scroll{overflow:visible}.route-diagram{display:none}
  .trip-photo{break-inside:avoid}.trip-photo img{height:150px}.trip-photo figcaption{font-size:9px}.trip-photo figcaption a{font-size:8px}.food-photo img{height:110px}.day-body{padding-left:0}.day{break-inside:auto}.day summary{break-after:avoid}.day-heading h3{font-size:14px}.slots p{font-size:11px}.aside{display:block}.aside-block{background:white}.budget-total{background:#eef2f7!important;color:#18212D}.budget-total .amount{font-size:30px}.source-list{grid-template-columns:1fr 1fr;font-size:10px}.nav-inner,.timeline-tools,.small-button{display:none!important}

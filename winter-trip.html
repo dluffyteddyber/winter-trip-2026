@@ -170,6 +170,12 @@ section{display:grid;gap:14px;min-width:0}
 .lanechip.all{border-style:dashed;border-color:var(--line);background:transparent}
 .rm{margin-left:8px;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font:14px/1 var(--f-body)}
 .rm:hover{color:var(--accent);border-color:var(--accent)}
+.pl{font:14px var(--f-body);color:var(--ink);background:transparent;border:1px solid transparent;border-bottom:1px dashed var(--line);border-radius:6px 6px 0 0;padding:3px 6px;width:100%;min-width:0}
+.pl:hover{border-color:var(--line);border-radius:6px}
+.pl:focus{border:1px solid var(--accent);border-radius:6px;background:var(--surface);outline:none}
+.plt{display:grid;gap:4px;justify-items:start;min-width:0}
+.plr{display:flex;align-items:center;gap:6px;min-width:0}
+.plr .rm{margin-left:0;flex:none}
 .names{border-top:1px solid var(--line);padding-top:14px}
 .names summary{cursor:pointer;font:600 15px var(--f-display)}
 .nm-grid{display:grid;grid-template-columns:minmax(80px,140px) minmax(0,200px) minmax(0,200px);gap:6px 12px;align-items:center;margin:12px 0 8px}
@@ -244,7 +250,7 @@ section{display:grid;gap:14px;min-width:0}
     <div class="edhead">
       <div>
         <h2 data-en="Adjust dates" data-zh="調整日期"></h2>
-        <p data-en="Use ‹ › to move when someone arrives and − + to change how long each stay lasts. Later stays move with it. Changes are saved in this browser." data-zh="用 ‹ › 移動抵達日，用 − + 改變每段停留的天數，之後的行程會跟著移動。更改會儲存在這個瀏覽器。"></p>
+        <p data-en="Use ‹ › to move when someone arrives and − + to change how long each stay lasts. Later stays move with it. Click a place to rename it; clear it to go back to the default. Changes are saved in this browser." data-zh="用 ‹ › 移動抵達日，用 − + 改變每段停留的天數，之後的行程會跟著移動。點擊地點可以改名，清空就恢復預設。更改會儲存在這個瀏覽器。"></p>
       </div>
       <button type="button" class="reset" id="reset" data-en="Reset to plan" data-zh="還原計劃"></button>
     </div>
@@ -265,7 +271,7 @@ section{display:grid;gap:14px;min-width:0}
         <button type="submit" class="reset" data-en="Add" data-zh="新增"></button>
       </div>
       <p class="note" id="af-msg" role="status"></p>
-      <p class="note" data-en="Type a name you already added to give that person another stay. Added people are saved in this browser." data-zh="輸入已新增的名字，可以為那個人再加一段行程。新增的人儲存在這個瀏覽器。"></p>
+      <p class="note" data-en="Type anyone already on the chart, like Keat or Da, to give them another stay. A new name adds a new person. Saved in this browser." data-zh="輸入圖上已有的人（例如 Keat 或 達）可以為他們再加一段行程；輸入新名字就新增一個人。儲存在這個瀏覽器。"></p>
     </form>
   </div>
 
@@ -370,7 +376,9 @@ section{display:grid;gap:14px;min-width:0}
     th:{lot:{on:true,s:0,e:0}, top:{on:true,s:0,e:0}},  // Lot and Top: join the China trip; s/e = days joined late / left early
     custom:[],   // people added on the page: {id, name, stays:[{place, start, len}]}
     hidden:[],   // chart rows switched off
-    names:{}};   // edited display names: id → [English, Chinese]
+    names:{},    // edited display names: id → [English, Chinese]
+    places:{},   // renamed stays: 'person:stay' → [English, Chinese]
+    extra:{}};   // extra stays added to planned people: id → [{place, start, len}]
   function clone(o){ return JSON.parse(JSON.stringify(o)); }
   var state = clone(DEF);
   try{
@@ -399,6 +407,16 @@ section{display:grid;gap:14px;min-width:0}
         var n=s.names[id];
         if (Array.isArray(n) && n.length===2 && typeof n[0]==='string' && typeof n[1]==='string') state.names[id]=[n[0].slice(0,40),n[1].slice(0,40)];
       });
+      if (s.places && typeof s.places==='object') Object.keys(s.places).forEach(function(key){
+        var n=s.places[key];
+        if (Array.isArray(n) && n.length===2 && typeof n[0]==='string' && typeof n[1]==='string') state.places[key]=[n[0].slice(0,40),n[1].slice(0,40)];
+      });
+      if (s.extra && typeof s.extra==='object') Object.keys(s.extra).forEach(function(id){
+        if (!Array.isArray(s.extra[id])) return;
+        var ok=s.extra[id].filter(function(x){ return x && typeof x.place==='string' && Number.isInteger(x.start) && Number.isInteger(x.len); })
+          .map(function(x){ return {place:x.place.slice(0,40),start:x.start,len:x.len}; });
+        if (ok.length) state.extra[id]=ok;
+      });
     }
   }catch(e){}
 
@@ -411,6 +429,13 @@ section{display:grid;gap:14px;min-width:0}
     return c ? c.name : id;
   }
   function nm(id){ var k=L==='zh'?1:0, n=state.names[id]; return (n && n[k]) || nmDefault(id,k); }
+  // Stay names, editable per language. Keys look like 'ming:1' or 'me:china'.
+  function pl(key,en,zh){ var o=state.places[key], k=L==='zh'?1:0; return (o && o[k]) || (k?zh:en); }
+  var PLANNED = ['me','ming','liang','xs','hong','keat','cal','frankie','lot','top'];
+  function laneColor(id){
+    var p=PEOPLE.filter(function(q){ return q.id===id; })[0];
+    return p ? p.c : ({me:'--c-me',cal:'--c-cal',frankie:'--c-frankie',lot:'--c-thai',top:'--c-thai'}[id] || '--c-me');
+  }
   var CPAL = ['--c-keat','--c-frankie','--c-hong','--c-family2','--c-cal','--c-thai','--c-family3'];
   function customColor(k){ return CPAL[k % CPAL.length]; }
   function save(){ try{ localStorage.setItem('wt-state2',JSON.stringify(state)); }catch(e){} }
@@ -429,7 +454,7 @@ section{display:grid;gap:14px;min-width:0}
   function inHK(i,m){ return (i>=m.hk && i<m.cs) || (i>m.ce && i<=HOME); }
   function legs(p){
     var st=state.p[p.id], a=st.start, out=[];
-    p.legs.forEach(function(l,k){ var b=a+st.lens[k]-1; out.push({a:a,b:b,label:tr(l[0],l[1]),tip:tr(l[2],l[3])}); a=b+1; });
+    p.legs.forEach(function(l,k){ var b=a+st.lens[k]-1; out.push({a:a,b:b,label:pl(p.id+':'+k,l[0],l[1]),tip:tr(l[2],l[3])}); a=b+1; });
     return out;
   }
   function byId(id){ return PEOPLE.filter(function(p){return p.id===id;})[0]; }
@@ -456,7 +481,7 @@ section{display:grid;gap:14px;min-width:0}
       if (cur) out.push(cur);
       cur = p ? {k:p,place:p,a:i,b:i} : null;
     }
-    var LBL={sh:tr('Shanghai (optional)','上海（可選）'),china:tr('China trip','中國遊'),hk:tr('Hong Kong','香港')};
+    var LBL={sh:pl('frankie:sh','Shanghai (optional)','上海（可選）'),china:pl('frankie:china','China trip','中國遊'),hk:pl('frankie:hk','Hong Kong','香港')};
     var TIP={sh:tr('Optional: joins you in Shanghai','可選：來上海一起玩'),china:tr('Joins your China trip','一起去中國遊'),hk:tr('Frankie in Hong Kong from '+fmt(f.hkStart),'Frankie '+fmt(f.hkStart)+' 起在香港')};
     out.forEach(function(l){ l.label=LBL[l.k]; l.tip=TIP[l.k]; });
     return out;
@@ -480,8 +505,9 @@ section{display:grid;gap:14px;min-width:0}
     L.forEach(function(l){ for(var i=Math.max(l.a,LAND);i<=l.b;i++){ t++; if (myPlace(i,m)===l.place) n++; } });
     return [n,t];
   }
-  function routeName(){ return state.da==='wuhan' ? tr('Wuhan','武汉') : tr('Day trips','周边遊'); }
-  var CHINA = function(){ return tr('China trip · Yunnan?','中國遊 · 雲南?'); };
+  function routeKey(){ return state.da==='wuhan' ? 'me:wuhan' : 'me:trips'; }
+  function routeName(){ return state.da==='wuhan' ? pl('me:wuhan','Wuhan','武汉') : pl('me:trips','Day trips','周边遊'); }
+  var CHINA = function(){ return pl('me:china','China trip · Yunnan?','中國遊 · 雲南?'); };
 
   function renderTimeline(m){
     var all = [{k:'ms',name:tr('Moments','時刻'),sub:'',h:54},{k:'me',name:nm('me'),sub:tr('Me','我'),h:36,c:'--c-me'}]
@@ -538,11 +564,11 @@ section{display:grid;gap:14px;min-width:0}
     });
 
     // You
-    seg('me',LAND,m.shEnd,tr('Shanghai','上海'),'--c-me',false,tr('CZ3596 lands at Hongqiao 22:10 on 12.5','CZ3596 12.5 22:10 抵達虹橋'));
+    seg('me',LAND,m.shEnd,pl('me:sh','Shanghai','上海'),'--c-me',false,tr('CZ3596 lands at Hongqiao 22:10 on 12.5','CZ3596 12.5 22:10 抵達虹橋'));
     if (m.route) seg('me',m.route[0],m.route[1],routeName(),'--c-me',true,state.da==='wuhan'?tr('Wuhan with the family','與家人去武汉'):tr('Day trips around Shanghai','上海周边遊'));
-    seg('me',m.hk,m.cs-1,tr('Hong Kong','香港'),'--c-me',false,tr('Hong Kong','香港'));
+    seg('me',m.hk,m.cs-1,pl('me:hk1','Hong Kong','香港'),'--c-me',false,pl('me:hk1','Hong Kong','香港'));
     seg('me',m.cs,m.ce,CHINA(),'--c-me',false,tr('China trip, tentatively Yunnan','中國遊，暫定雲南'));
-    seg('me',m.ce+1,W1,tr('Hong Kong','香港'),'--c-me',false,tr('Hong Kong, last stretch','香港，最後一段'));
+    seg('me',m.ce+1,W1,pl('me:hk2','Hong Kong','香港'),'--c-me',false,tr('Hong Kong, last stretch','香港，最後一段'));
     seg('me',HOME,HOME,'✈','--c-travel',false,tr('CX237 HKG 00:25 (night of 1.16) → LHR 07:00 on 1.17','CX237 1.17 凌晨 00:25 香港起飛（即 1.16 深夜）→ 07:00 抵達倫敦'));
 
     // Everyone else
@@ -551,9 +577,12 @@ section{display:grid;gap:14px;min-width:0}
     });
     frLegs(m).forEach(function(l){ seg('frankie',l.a,l.b,l.label,'--c-frankie',l.k!=='hk',l.tip); });
     state.custom.forEach(function(c,k){
-      c.stays.forEach(function(x){ seg(c.id,x.start,x.start+x.len-1,x.place,customColor(k),false,nm(c.id)+' · '+x.place); });
+      c.stays.forEach(function(x){ seg(c.id,x.start,x.start+x.len-1,x.place||tr('Trip','行程'),customColor(k),false,nm(c.id)+' · '+x.place); });
     });
-    THAI.forEach(function(p){ var l=thLeg(p.id,m); if (l) seg(p.id,l.a,l.b,tr('China trip','中國遊'),'--c-thai',true,tr('Flies in from Thailand for the China trip','從泰國來一起去中國遊')); });
+    PLANNED.forEach(function(id){
+      (state.extra[id]||[]).forEach(function(x){ seg(id,x.start,x.start+x.len-1,x.place||tr('Trip','行程'),laneColor(id),false,nm(id)+' · '+x.place); });
+    });
+    THAI.forEach(function(p){ var l=thLeg(p.id,m); if (l) seg(p.id,l.a,l.b,pl(p.id+':china','China trip','中國遊'),'--c-thai',true,tr('Flies in from Thailand for the China trip','從泰國來一起去中國遊')); });
     if (state.cal.on) seg('cal',state.cal.day,state.cal.day,'●','--c-cal',true,tr('Optional: meet '+nm('cal')+' (曾致) in Shanghai. He works, so one weekday only','可選：在上海和 '+nm('cal')+'（曾致）見面。他要上班，平日只有一天'));
 
     // Work: runs of working days, holidays marked
@@ -583,26 +612,29 @@ section{display:grid;gap:14px;min-width:0}
     var shorter=tr('Shorter','縮短'), longer=tr('Longer','延長');
     var fills=function(n){ return fixed(days(n)+tr(' · fills the gap',' · 自動填補')); };
     var none=tr('none','無');
-    row(true,nm('me'),'--c-me',esc(tr('Shanghai','上海')),state.shLen?range(LAND,m.shEnd):'—',fixed(tr('lands 12.5','12.5 抵達')),stepper('sh','',days(state.shLen),shorter,longer));
-    if (state.da!=='hk') row(false,'','--c-me',esc(routeName()),m.route?range(m.route[0],m.route[1]):'—','',stepper('route','',days(state.routeLen),shorter,longer));
-    row(false,'','--c-me',esc(tr('Hong Kong','香港')),m.cs>m.hk?range(m.hk,m.cs-1):none,'',fills(m.cs-m.hk));
-    row(false,'','--c-me',esc(CHINA()),m.china?range(m.cs,m.ce):'—',stepper('cstart','',fmtD(m.cs0),tr('Start earlier','提前出發'),tr('Start later','延後出發'),true),stepper('clen','',days(m.china?m.ce-m.cs+1:0),shorter,longer));
-    row(false,'','--c-me',esc(tr('Hong Kong','香港')),m.ce<W1?range(m.ce+1,W1):none,'',fills(W1-m.ce));
+    // Every stay name is an inline box: type to rename it, clear it to go back to the default.
+    var place=function(key,label){ return '<input class="pl" id="pl-'+esc(key.replace(/[^\w-]/g,'-'))+'" data-pl="'+esc(key)+'" maxlength="40" value="'+esc(label)+'" aria-label="'+esc(tr('Place name','地點名稱'))+'">'; };
+    var rmBtn=function(at){ return '<button type="button" class="rm" data-act="crm"'+at+' aria-label="'+esc(tr('Remove this stay','刪除這段行程'))+'">×</button>'; };
+    row(true,nm('me'),'--c-me',place('me:sh',pl('me:sh','Shanghai','上海')),state.shLen?range(LAND,m.shEnd):'—',fixed(tr('lands 12.5','12.5 抵達')),stepper('sh','',days(state.shLen),shorter,longer));
+    if (state.da!=='hk') row(false,'','--c-me',place(routeKey(),routeName()),m.route?range(m.route[0],m.route[1]):'—','',stepper('route','',days(state.routeLen),shorter,longer));
+    row(false,'','--c-me',place('me:hk1',pl('me:hk1','Hong Kong','香港')),m.cs>m.hk?range(m.hk,m.cs-1):none,'',fills(m.cs-m.hk));
+    row(false,'','--c-me',place('me:china',CHINA()),m.china?range(m.cs,m.ce):'—',stepper('cstart','',fmtD(m.cs0),tr('Start earlier','提前出發'),tr('Start later','延後出發'),true),stepper('clen','',days(m.china?m.ce-m.cs+1:0),shorter,longer));
+    row(false,'','--c-me',place('me:hk2',pl('me:hk2','Hong Kong','香港')),m.ce<W1?range(m.ce+1,W1):none,'',fills(W1-m.ce));
     PEOPLE.forEach(function(p){
       var st=state.p[p.id];
       legs(p).forEach(function(l,k){
-        row(k===0,k===0?nm(p.id):'',p.c,esc(l.label),l.b<l.a?'—':range(l.a,l.b),
+        row(k===0,k===0?nm(p.id):'',p.c,place(p.id+':'+k,l.label),l.b<l.a?'—':range(l.a,l.b),
           k===0?stepper('start',' data-p="'+p.id+'"',fmtD(st.start),tr('Arrive earlier','提早抵達'),tr('Arrive later','延後抵達'),true):'',
           stepper('len',' data-p="'+p.id+'" data-i="'+k+'"',days(st.lens[k]),shorter,longer));
       });
     });
     var f=state.fr;
-    var tog=function(act,on,en,zh){ return '<button type="button" class="tog" data-act="'+act+'" aria-pressed="'+on+'">'+esc(tr(en,zh))+' · '+esc(on?tr('joining','參加'):tr('not joining','不參加'))+'</button>'; };
-    row(true,''+nm('frankie')+'','--c-frankie',tog('frsh',f.sh,'Shanghai','上海'),f.sh&&f.shLen?range(f.shStart,f.shStart+f.shLen-1):'—',
+    var tog=function(act,on,extra){ return '<button type="button" class="tog" data-act="'+act+'"'+(extra||'')+' aria-pressed="'+on+'">'+esc(on?tr('joining','參加'):tr('not joining','不參加'))+'</button>'; };
+    row(true,''+nm('frankie')+'','--c-frankie','<div class="plt">'+place('frankie:sh',pl('frankie:sh','Shanghai (optional)','上海（可選）'))+tog('frsh',f.sh)+'</div>',f.sh&&f.shLen?range(f.shStart,f.shStart+f.shLen-1):'—',
       f.sh?stepper('frshstart','',fmtD(f.shStart),tr('Arrive earlier','提早抵達'),tr('Arrive later','延後抵達'),true):'',
       f.sh?stepper('frshlen','',days(f.shLen),shorter,longer):'');
-    row(false,'','--c-frankie',tog('frchina',f.china,'China trip','中國遊'),f.china&&m.china?range(m.cs,m.ce):'—','',f.china&&m.china?fixed(tr('same dates as yours','跟你的日期一樣')):'');
-    row(false,'','--c-frankie',esc(tr('Hong Kong (base)','香港（基地）')),range(f.hkStart,f.hkEnd),
+    row(false,'','--c-frankie','<div class="plt">'+place('frankie:china',pl('frankie:china','China trip','中國遊'))+tog('frchina',f.china)+'</div>',f.china&&m.china?range(m.cs,m.ce):'—','',f.china&&m.china?fixed(tr('same dates as yours','跟你的日期一樣')):'');
+    row(false,'','--c-frankie',place('frankie:hk',pl('frankie:hk','Hong Kong','香港')),range(f.hkStart,f.hkEnd),
       stepper('frhkstart','',fmtD(f.hkStart),tr('Arrive earlier','提早抵達'),tr('Arrive later','延後抵達'),true),
       stepper('frhkend','',tr('until ','至 ')+fmt(f.hkEnd),tr('Leave earlier','提早離開'),tr('Leave later','延後離開'),true));
     var c=state.cal;
@@ -612,23 +644,34 @@ section{display:grid;gap:14px;min-width:0}
       c.on?fixed(tr('1 weekday','平日一天')):'');
     THAI.forEach(function(p){
       var t=state.th[p.id], l=thLeg(p.id,m), x=' data-p="'+p.id+'"';
-      row(true,nm(p.id),'--c-thai','<button type="button" class="tog" style="--tc:var(--c-thai)" data-act="thtog"'+x+' aria-pressed="'+t.on+'">'+esc(tr('China trip','中國遊'))+' · '+esc(t.on?tr('joining','參加'):tr('not joining','不參加'))+'</button>',
+      row(true,nm(p.id),'--c-thai','<div class="plt">'+place(p.id+':china',pl(p.id+':china','China trip','中國遊'))+tog('thtog',t.on,x+' style="--tc:var(--c-thai)"')+'</div>',
         l?range(l.a,l.b):'—',
         l?stepper('ths',x,fmtD(l.a),tr('Join earlier','提早加入'),tr('Join later','延後加入'),true):'',
         l?stepper('the',x,tr('until ','至 ')+fmt(l.b),tr('Leave earlier','提早離開'),tr('Leave later','延後離開'),true):'');
+    });
+    PLANNED.forEach(function(id){
+      (state.extra[id]||[]).forEach(function(x,i){
+        var at=' data-p="'+id+'" data-i="'+i+'"';
+        row(i===0,i===0?nm(id)+tr(' · added stays',' · 新增行程'):'',laneColor(id),
+          '<div class="plr">'+place('x:'+id+':'+i,x.place)+rmBtn(at)+'</div>',
+          x.len?range(x.start,x.start+x.len-1):'—',
+          stepper('cst',at,fmtD(x.start),tr('Arrive earlier','提早抵達'),tr('Arrive later','延後抵達'),true),
+          stepper('cln',at,days(x.len),shorter,longer));
+      });
     });
     state.custom.forEach(function(c,k){
       c.stays.forEach(function(x,i){
         var at=' data-p="'+esc(c.id)+'" data-i="'+i+'"';
         row(i===0,i===0?nm(c.id):'',customColor(k),
-          esc(x.place)+'<button type="button" class="rm" data-act="crm"'+at+' aria-label="'+esc(tr('Remove this stay','刪除這段行程'))+'">×</button>',
+          '<div class="plr">'+place('c:'+c.id+':'+i,x.place)+rmBtn(at)+'</div>',
           x.len?range(x.start,x.start+x.len-1):'—',
           stepper('cst',at,fmtD(x.start),tr('Arrive earlier','提早抵達'),tr('Arrive later','延後抵達'),true),
           stepper('cln',at,days(x.len),shorter,longer));
       });
     });
     document.getElementById('editor').innerHTML = rows.join('');
-    document.getElementById('af-names').innerHTML = state.custom.map(function(c){ return '<option value="'+esc(c.name)+'"></option>'; }).join('');
+    document.getElementById('af-names').innerHTML = PLANNED.map(nm).concat(state.custom.map(function(c){ return nm(c.id); }))
+      .map(function(n){ return '<option value="'+esc(n)+'"></option>'; }).join('');
   }
 
   function renderText(m){
@@ -832,12 +875,22 @@ section{display:grid;gap:14px;min-width:0}
       return;
     }
     // Reset puts the plan's dates back but keeps added people and hidden rows.
-    if (e.target.closest('#reset')){ var keep={custom:state.custom,hidden:state.hidden,names:state.names}; state=clone(DEF); state.custom=keep.custom; state.hidden=keep.hidden; state.names=keep.names; save(); renderAll(); return; }
+    if (e.target.closest('#reset')){
+      var keep={custom:state.custom,hidden:state.hidden,names:state.names,places:state.places,extra:state.extra};
+      state=clone(DEF);
+      Object.keys(keep).forEach(function(k){ state[k]=keep[k]; });
+      save(); renderAll(); return;
+    }
     var b=e.target.closest('.st, .tog, .rm'); if(!b) return;
     var act=b.getAttribute('data-act'), d=Number(b.getAttribute('data-d')||0), pid=b.getAttribute('data-p'), m=me(), f=state.fr;
     var th = pid && state.th[pid], tlen = m.china ? m.ce-m.cs+1 : 1;
-    var cp = pid && state.custom.filter(function(c){ return c.id===pid; })[0], ci=Number(b.getAttribute('data-i')), cx = cp && cp.stays[ci];
-    if (act==='crm'){ cp.stays.splice(ci,1); if (!cp.stays.length) state.custom=state.custom.filter(function(c){ return c!==cp; }); }
+    // Stays added on the page: an added person's own list, or extra stays on a planned person.
+    var cp = pid && state.custom.filter(function(c){ return c.id===pid; })[0];
+    var list = cp ? cp.stays : (pid && state.extra[pid]), ci=Number(b.getAttribute('data-i')), cx = list && list[ci];
+    if (act==='crm'){
+      list.splice(ci,1);
+      if (!list.length){ if (cp) state.custom=state.custom.filter(function(c){ return c!==cp; }); else delete state.extra[pid]; }
+    }
     else if (act==='cst') cx.start=clamp(cx.start+d,0,N-1);
     else if (act==='cln') cx.len=clamp(cx.len+d,0,N);
     else if (act==='thtog') th.on=!th.on;
@@ -866,7 +919,21 @@ section{display:grid;gap:14px;min-width:0}
     if (again) again.focus();
   });
   document.addEventListener('input',function(e){
-    var el=e.target; if (!el.matches('input[data-nm]')) return;
+    var el=e.target;
+    if (el.matches('input[data-pl]')){
+      // Update the chart and text while typing; the editor itself is left alone so the box keeps focus.
+      var key=el.getAttribute('data-pl'), v=el.value.trim().slice(0,40), parts=key.split(':');
+      if (parts[0]==='c' || parts[0]==='x'){
+        var owner = parts[0]==='c' ? state.custom.filter(function(c){ return c.id===parts[1]; })[0] : null;
+        var lst = owner ? owner.stays : state.extra[parts[1]];
+        if (lst && lst[Number(parts[2])]) lst[Number(parts[2])].place=v;
+      } else {
+        var o=(state.places[key]||['','']).slice(); o[L==='zh'?1:0]=v;
+        if (!o[0] && !o[1]) delete state.places[key]; else state.places[key]=o;
+      }
+      save(); renderView(); return;
+    }
+    if (!el.matches('input[data-nm]')) return;
     var id=el.getAttribute('data-nm'), k=Number(el.getAttribute('data-k')), cur=(state.names[id]||['','']).slice();
     cur[k]=el.value.trim().slice(0,40);
     if (!cur[0] && !cur[1]) delete state.names[id]; else state.names[id]=cur;
@@ -880,15 +947,26 @@ section{display:grid;gap:14px;min-width:0}
     var place=(document.getElementById('af-place').value.trim()||tr('Trip','行程')).slice(0,40);
     var start=clamp(Number(document.getElementById('af-start').value)||0,0,N-1);
     var len=clamp(parseInt(document.getElementById('af-len').value,10)||1,1,N);
-    var p=state.custom.filter(function(c){ return c.name.toLowerCase()===name.toLowerCase(); })[0];
-    if (!p){ p={id:'c'+Date.now().toString(36), name:name, stays:[]}; state.custom.push(p); }
-    p.stays.push({place:place,start:start,len:len});
-    state.hidden=state.hidden.filter(function(h){ return h!==p.id; });
+    // A planned person's name (in either language) adds an extra stay to them; otherwise an added person.
+    var lname=name.toLowerCase();
+    var pid=PLANNED.filter(function(id){
+      return [nm(id),NAME_DEF[id][0],NAME_DEF[id][1]].concat(state.names[id]||[]).some(function(n){ return n && n.toLowerCase()===lname; });
+    })[0];
+    if (pid){
+      (state.extra[pid]=state.extra[pid]||[]).push({place:place,start:start,len:len});
+    } else {
+      var p=state.custom.filter(function(c){ return c.name.toLowerCase()===lname || nm(c.id).toLowerCase()===lname; })[0];
+      if (!p){ p={id:'c'+Date.now().toString(36), name:name, stays:[]}; state.custom.push(p); }
+      p.stays.push({place:place,start:start,len:len});
+      pid=p.id;
+    }
+    state.hidden=state.hidden.filter(function(h){ return h!==pid; });
     save(); renderAll();
     document.getElementById('af-name').value=''; document.getElementById('af-place').value='';
     document.getElementById('af-msg').textContent=tr('Added '+name+' · '+place+' · '+range(start,start+len-1),'已新增 '+name+' · '+place+' · '+range(start,start+len-1));
   });
   document.addEventListener('change',function(e){
+    if (e.target.matches('input[data-pl]')){ renderAll(); return; }  // on leaving the box, show the default again if it was cleared
     if(!e.target.matches('.check input')) return;
     var done={};
     try{ done=JSON.parse(localStorage.getItem('wt-checks')||'{}')||{}; }catch(err){}
@@ -896,6 +974,7 @@ section{display:grid;gap:14px;min-width:0}
     try{ localStorage.setItem('wt-checks',JSON.stringify(done)); }catch(err){}
   });
 
+  function renderView(){ var m=me(); renderTimeline(m); renderText(m); renderChecks(m); }
   function renderAll(){ var m=me(); applyLang(); renderTimeline(m); renderEditor(m); renderText(m); renderChecks(m); renderNames(); syncToggles(); }
   renderTZ(); renderAll();
 })();

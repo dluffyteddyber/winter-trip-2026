@@ -6,15 +6,38 @@ Open [the detailed HTML itinerary](index.html) in a browser for the daily timeli
 food ideas, transfer planning, adjustable budget and booking checklist. The page
 works locally without a server. Destination and food photos are saved in
 `assets/images`; keep the whole `assets` folder and `trip-theme.css` alongside
-`index.html` when copying the itinerary. The same font families as the master and
+`index.html`, plus `translations.js`, when copying the itinerary. The same font families as the master and
 Shanghai pages are bundled locally, with their open-font licences in `assets/fonts`.
 No remote resources are needed to display the page. Use the print button to save
 the complete itinerary as a PDF.
 
 The page follows the shared trip styling: grey background, white panels, red
 accents, sans-serif typography, dark-mode support and a ten-day swimlane overview.
-See [photo credits and licences](Image-credits.md) for the ten Wikimedia Commons
-photographs used throughout the city overview, daily entries and food section.
+The ten destination and food photos are stored locally for your personal itinerary.
+Their source details are kept in [Image-credits.md](Image-credits.md), outside the main page.
+
+## English, Thai and Traditional Chinese
+
+Use the **English / ไทย / 繁體中文** buttons at the top of the HTML page. The complete daily
+itinerary, food guide, budget labels, booking checklist, photo descriptions and
+calendar reminders are available in Thai and Traditional Chinese. Chinese place and dish names remain
+available for use while travelling, including Simplified Chinese menu names in the food guide.
+
+The page remembers your language in this browser when storage is available. You
+can also open `index.html?lang=th` for Thai, `index.html?lang=zh` for Traditional Chinese,
+or `index.html?lang=en` for English. The language is initially chosen from the browser's
+language when no saved choice or URL override exists. Chinese uses Traditional Chinese
+wording suited to the Hong Kong reader; `zh-HK` and `zh-TW` URL values also work.
+Dates retain the Gregorian years 2026–2027. RMB remains the main budget currency,
+with smaller approximate comparisons beside every amount: GBP (£) in English,
+HKD (HK$) in Chinese, and THB (฿) in Thai. Comparisons update with the sliders and
+language switch. They use a saved [ECB reference-rate snapshot](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html)
+dated **21 October 2026**, checked on 22 October, and work offline. These are planning
+comparisons, rounded to whole currency units, rather than live rates. The snapshot
+quotes each currency per EUR: CNY 7.4999, GBP 0.83825, HKD 8.8155, THB 37.718.
+Each comparison divides the selected currency's EUR rate by the CNY EUR rate.
+Printing uses the selected language. The background Markdown planning files are
+still in English.
 
 Only this `China Sub-trip` folder is editable for this task. The master winter-trip
 files and other folders are read-only.
