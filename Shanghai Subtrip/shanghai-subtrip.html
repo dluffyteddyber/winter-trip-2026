@@ -35,6 +35,7 @@
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
 a{color:var(--accent)}
 .wrap{max-width:1180px;margin:0 auto;padding-block:36px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+.top{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:start}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .eyebrow a{color:inherit}
 h1{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5.2vw,46px);line-height:1.05;margin:6px 0 0;text-wrap:balance;letter-spacing:-.01em}
@@ -116,7 +117,6 @@ section{display:grid;gap:14px;min-width:0}
 .chip.clash{color:var(--accent)}
 .chip.open{color:var(--c-keat)}
 .chip.check{color:var(--c-trip)}
-.chip.ok{color:var(--c-ok)}
 .dec p{margin:0;color:var(--muted);font-size:14px}
 
 .opts{list-style:none;margin:0;padding:0;display:grid}
@@ -125,7 +125,7 @@ section{display:grid;gap:14px;min-width:0}
 .opts b{font-weight:600}
 .opts .tm{font:12px var(--f-mono);color:var(--muted);white-space:nowrap;text-align:right}
 .opts p{grid-column:1 / -1;margin:0;color:var(--muted);font-size:14px}
-.opts li.on b::after{content:"in your plan";margin-left:8px;font:500 11px var(--f-mono);padding:0 6px;border-radius:4px;border:1px solid currentColor;color:var(--c-trip)}
+.opts li.on b::after{content:attr(data-on);margin-left:8px;font:500 11px var(--f-mono);padding:0 6px;border-radius:4px;border:1px solid currentColor;color:var(--c-trip)}
 
 .know{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:var(--muted)}
 .know b{color:var(--ink);font-weight:600}
@@ -141,78 +141,75 @@ section{display:grid;gap:14px;min-width:0}
 
 <div class="wrap">
   <header>
-    <div class="eyebrow"><a id="back" href="../winter-trip.html">← Winter 2026–27</a> · Part 1 · LHR → 上海 → <span id="eb-next">武汉 → 香港</span></div>
-    <h1>上海 Shanghai · 5–13 Dec</h1>
-    <p class="lede">The opening stretch of the winter trip. You land late on 12.5, the family is already in Shanghai, and the next day is 姨媽's race and birthday. Then come four days of annual leave around Shanghai, and on 12.9 a choice: go to Wuhan with the family, go ahead to Hong Kong, or stay on in Shanghai. Remote work starts on 12.14.</p>
+    <div class="top">
+      <div class="eyebrow"><a id="back" href="../winter-trip.html" data-en="← Winter 2026–27" data-zh="← 冬日行程 2026–27"></a> · <span data-en="Part 1" data-zh="第一段"></span> · LHR → 上海 → <span id="eb-next"></span></div>
+      <div class="seggrp" data-k="lang" aria-label="Language 語言"><button type="button" data-v="en" lang="en">EN</button><button type="button" data-v="zh" lang="zh-Hant">中文</button></div>
+    </div>
+    <h1 data-en="上海 Shanghai · 5–13 Dec" data-zh="上海 · 12.5 – 12.13"></h1>
+    <p class="lede" data-en="The opening stretch of the winter trip. You land late on 12.5, the family is already in Shanghai, and the next day is 姨媽's race and birthday. Then come four days of annual leave around Shanghai, and on 12.9 a choice: go to Wuhan with the family, go ahead to Hong Kong, or stay on in Shanghai. Remote work starts on 12.14." data-zh="冬日行程的第一段。你 12.5 深夜抵達時家人已在上海，第二天是姨媽的跑馬和生日。之後在上海放四天年假，到 12.9 要做決定：跟家人去武汉、先去香港，或留在上海。12.14 開始遠程工作。"></p>
     <dl class="facts">
-      <div><dt>Dates</dt><dd>Sat 5 – Sun 13 Dec</dd></div>
-      <div><dt>Flight in</dt><dd>CZ3596 · 虹桥 22:10 · booked</dd></div>
-      <div><dt>Annual leave</dt><dd>12.7 – 12.11</dd></div>
-      <div><dt>After Shanghai</dt><dd id="f-after"></dd></div>
-      <div><dt>Family</dt><dd>姨媽 明 · 亮 · 许嵩 · 红</dd></div>
-      <div><dt>Friends</dt><dd id="f-friends"></dd></div>
+      <div><dt data-en="Dates" data-zh="日期"></dt><dd data-en="Sat 5 – Sun 13 Dec" data-zh="12.5 週六 – 12.13 週日"></dd></div>
+      <div><dt data-en="Flight in" data-zh="去程航班"></dt><dd data-en="CZ3596 · 虹桥 22:10 · booked" data-zh="CZ3596 · 虹桥 22:10 · 已訂"></dd></div>
+      <div><dt data-en="Annual leave" data-zh="年假"></dt><dd>12.7 – 12.11</dd></div>
+      <div><dt data-en="After Shanghai" data-zh="上海之後"></dt><dd id="f-after"></dd></div>
+      <div><dt data-en="Family" data-zh="家人"></dt><dd>姨媽 明 · 亮 · 许嵩 · 红</dd></div>
+      <div><dt data-en="Friends" data-zh="朋友"></dt><dd id="f-friends"></dd></div>
     </dl>
   </header>
 
   <div class="panel">
     <div class="panel-head">
-      <h2>Who's where, day by day</h2>
+      <h2 data-en="Who's where, day by day" data-zh="每日行蹤"></h2>
       <div class="controls">
-        <div class="ctrl">After Shanghai, 達
-          <div class="seggrp" data-k="da"><button type="button" data-v="wuhan">Wuhan</button><button type="button" data-v="hk">HK first</button><button type="button" data-v="sh">Stay in SH</button></div>
+        <div class="ctrl"><span data-en="After Shanghai, 達" data-zh="上海之後，達"></span>
+          <div class="seggrp" data-k="da"><button type="button" data-v="wuhan" data-en="Wuhan" data-zh="去武汉"></button><button type="button" data-v="hk" data-en="HK first" data-zh="先去香港"></button><button type="button" data-v="sh" data-en="Stay in SH" data-zh="留上海"></button></div>
         </div>
-        <div class="ctrl">Frankie in Shanghai
-          <div class="seggrp" data-k="fr"><button type="button" data-v="yes">from 12.8</button><button type="button" data-v="no">no</button></div>
+        <div class="ctrl"><span data-en="Frankie in Shanghai" data-zh="Frankie 來上海"></span>
+          <div class="seggrp" data-k="fr"><button type="button" data-v="yes" data-en="from 12.8" data-zh="12.8 起"></button><button type="button" data-v="no" data-en="no" data-zh="不來"></button></div>
         </div>
-        <div class="ctrl">Calvin 曾致
-          <div class="seggrp" data-k="cal"><button type="button" data-v="7">Mon 12.7</button><button type="button" data-v="8">Tue 12.8</button><button type="button" data-v="no">not meeting</button></div>
+        <div class="ctrl"><span>Calvin 曾致</span>
+          <div class="seggrp" data-k="cal"><button type="button" data-v="7" data-en="Mon 12.7" data-zh="12.7 週一"></button><button type="button" data-v="8" data-en="Tue 12.8" data-zh="12.8 週二"></button><button type="button" data-v="no" data-en="not meeting" data-zh="不見面"></button></div>
         </div>
       </div>
     </div>
     <div class="tl-scroll"><div class="tl" id="tl"></div></div>
     <div class="legend">
-      <span><i class="sw" style="--c:var(--c-me)"></i>You in Shanghai</span>
-      <span><i class="sw" style="--c:var(--c-trip)"></i>Away from Shanghai</span>
-      <span><i class="sw" style="--c:var(--c-travel)"></i>Travel day</span>
-      <span><i class="sw tent"></i>Tentative / to decide</span>
-      <span><i class="sw" style="background:var(--weekend);border-color:var(--line)"></i>Weekend</span>
-      <span><i class="off" style="margin:0;width:22px;height:14px">AL</i>Annual leave</span>
+      <span><i class="sw" style="--c:var(--c-me)"></i><span data-en="You in Shanghai" data-zh="你在上海"></span></span>
+      <span><i class="sw" style="--c:var(--c-trip)"></i><span data-en="Away from Shanghai" data-zh="離開上海"></span></span>
+      <span><i class="sw" style="--c:var(--c-travel)"></i><span data-en="Travel day" data-zh="交通日"></span></span>
+      <span><i class="sw tent"></i><span data-en="Tentative / to decide" data-zh="暫定／待決定"></span></span>
+      <span><i class="sw" style="background:var(--weekend);border-color:var(--line)"></i><span data-en="Weekend" data-zh="週末"></span></span>
+      <span><i class="off" style="margin:0;width:22px;height:14px" data-en="AL" data-zh="假"></i><span data-en="Annual leave" data-zh="年假"></span></span>
     </div>
     <div class="alert" id="keat-alert"></div>
   </div>
 
   <div class="grid2">
     <section>
-      <h2>Itinerary</h2>
+      <h2 data-en="Itinerary" data-zh="行程"></h2>
       <p class="note" id="itin-note"></p>
       <ol class="itin" id="itin"></ol>
     </section>
 
     <div class="stack">
       <section>
-        <h2>Decide next</h2>
+        <h2 data-en="Decide next" data-zh="待決定"></h2>
         <ul class="dec" id="dec"></ul>
       </section>
 
       <section>
-        <h2>Day trips from Shanghai</h2>
+        <h2 data-en="Day trips from Shanghai" data-zh="上海一日遊"></h2>
         <ul class="opts" id="opts"></ul>
-        <p class="note">Train times are typical high-speed ranges from Shanghai, not December timetables.</p>
+        <p class="note" data-en="Train times are typical high-speed ranges from Shanghai, not December timetables." data-zh="時間為從上海出發的一般高鐵車程，並非 12 月實際班次。"></p>
       </section>
 
       <section>
-        <h2>Good to know</h2>
-        <ul class="know">
-          <li><b>Late arrival:</b> CZ3596 lands at Hongqiao 虹桥 at 22:10. Plan on a taxi or DiDi to wherever you're staying, and nothing else that night.</li>
-          <li><b>Weather:</b> Shanghai is about 4–12 °C in early December, damp and often grey. Wuhan is similar or a little colder. Older buildings are poorly heated, so pack layers and a waterproof, plus something warm for standing out at the race.</li>
-          <li><b>Internet:</b> Google and WhatsApp are blocked on the mainland. Set up a roaming eSIM or VPN before 12.5.</li>
-          <li><b>Paying:</b> link Alipay or WeChat Pay to a foreign card, and add DiDi for taxis. Carry a little cash.</li>
-          <li><b>Trains:</b> book on 12306 or Trip.com. Your passport is the ticket, and sales open about 15 days ahead. The Wuhan → Hong Kong train clears immigration at West Kowloon 西九龍.</li>
-        </ul>
+        <h2 data-en="Good to know" data-zh="出發前須知"></h2>
+        <ul class="know" id="know"></ul>
       </section>
 
       <section>
-        <h2>Bookings</h2>
+        <h2 data-en="Bookings" data-zh="預訂"></h2>
         <ul class="check" id="check"></ul>
       </section>
     </div>
@@ -225,9 +222,18 @@ section{display:grid;gap:14px;min-width:0}
   var START = Date.UTC(2026,11,3), N = 11;
   function ix(d){ return d-3; }
   function day(i){ return new Date(START+i*864e5); }
-  var WK = ['日','一','二','三','四','五','六'];
-  var SH = '上海', WH = '武汉', HK = '香港', HZ = '杭州';
   var LEAVE = [ix(7),ix(8),ix(9),ix(10),ix(11)];
+
+  // Language: shares the main page's saved choice, so switching on either page carries over.
+  var L = 'en';
+  try{ L = localStorage.getItem('wt-lang') || ((navigator.language||'').toLowerCase().indexOf('zh')===0 ? 'zh' : 'en'); }catch(e){}
+  if (location.hash==='#zh' || location.hash==='#en') L = location.hash.slice(1);
+  if (L!=='zh') L='en';
+  function tr(en,zh){ return L==='zh' ? zh : en; }
+
+  var WK_ZH = ['日','一','二','三','四','五','六'], WK_EN = ['S','M','T','W','T','F','S'], WKD_EN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  function fmtD(i){ var d=day(i), w=d.getUTCDay(); return '12.'+d.getUTCDate()+' '+tr(WKD_EN[w],'週'+WK_ZH[w]); }
+  function place(k){ return {sh:tr('Shanghai','上海'), wh:tr('Wuhan','武汉'), hk:tr('Hong Kong','香港'), hz:tr('Hangzhou','杭州')}[k]; }
 
   var FILE = location.protocol==='file:';
   document.getElementById('back').href = FILE ? '../winter-trip.html' : 'https://claude.ai/artifact/FEYHby63Saqhs89FYQgqjU';
@@ -241,63 +247,130 @@ section{display:grid;gap:14px;min-width:0}
   }catch(e){}
   function save(){ try{ localStorage.setItem('sh-state2',JSON.stringify(state)); }catch(e){} }
   function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  function fmtD(i){ var d=day(i); return '12.'+d.getUTCDate()+' '+WK[d.getUTCDay()]; }
 
-  // Your days 12.5–12.13. s = timeline label, c = colour token, t/n = itinerary title and note, food = chips, sleep = where you spend the night.
+  // Your days 12.5–12.13. s = timeline label, c = colour token, t/n = itinerary title and note, food = [chip, note], sleep = place key for the night.
   function plan(){
-    var fr = state.fr==='yes';
-    var d = {};
-    d[ix(5)] = {s:'到上海', c:'--c-travel', t:'You land at Hongqiao 22:10 · CZ3596', n:'Booked. 红 lands at Pudong at 14:20 the same day (CZ6543), and the rest of the family has been here since 12.3. It\'s late, so take a taxi straight to bed: 姨媽 races in the morning.', food:[], sleep:SH};
-    d[ix(6)] = {s:'跑馬 + 生日', c:'--c-me', t:'姨媽\'s race + birthday', n:'Cheer 姨媽 on in the morning and meet her at the finish. She rests in the afternoon, then the whole family celebrates her birthday in the evening. She heads to Wuhan on 12.9, so keep the next days gentle.', food:[['Birthday dinner','the big meal']], sleep:SH};
-    d[ix(7)] = {s:'City day', c:'--c-me', leave:true, t:'Easy city day', n:'Gentle pace while 姨媽 recovers: the former French Concession (武康路, 安福路), cafés, and the Bund 外滩 at dusk.', food:[['本帮菜','红烧肉'],['葱油拌面','scallion noodles']], sleep:SH};
-    d[ix(8)] = {s:'苏州 trip', c:'--c-trip', trip:true, leave:true, t:'Day trip with the family', n:'The last full day with everyone in Shanghai: tomorrow the family leaves for Wuhan and 红 flies home. Suzhou 苏州 is 30 min by train (Humble Administrator\'s Garden 拙政园, Pingjiang Road 平江路). For a lighter day, take Metro Line 17 to Zhujiajiao 朱家角 water town.'+(fr?' Frankie may arrive from Hong Kong today.':''), food:[['苏式汤面','Suzhou noodles'],['Farewell dinner','with 红']], sleep:SH};
+    var fr = state.fr==='yes', d = {};
+    d[ix(5)] = {s:tr('Arrive','到上海'), c:'--c-travel', sleep:'sh',
+      t:tr('You land at Hongqiao 22:10 · CZ3596','22:10 抵達虹桥 · CZ3596'),
+      n:tr('Booked. 红 lands at Pudong at 14:20 the same day (CZ6543), and the rest of the family has been here since 12.3. It\'s late, so take a taxi straight to bed: 姨媽 races in the morning.',
+           '已訂。红同日 14:20 抵達浦東（CZ6543），其他家人 12.3 已到。到得很晚，直接坐的士回去睡覺：姨媽明早要跑馬。'), food:[]};
+    d[ix(6)] = {s:tr('Race day','跑馬 + 生日'), c:'--c-me', sleep:'sh',
+      t:tr('姨媽\'s race + birthday','姨媽跑馬 + 生日'),
+      n:tr('Cheer 姨媽 (明) on in the morning and meet her at the finish. She rests in the afternoon, then the whole family celebrates her birthday in the evening. She heads to Wuhan on 12.9, so keep the next days gentle.',
+           '早上為姨媽（明）打氣，在終點接她。下午讓她休息，晚上全家為她慶生。她 12.9 去武汉，之後幾天行程放輕鬆。'),
+      food:[[tr('Birthday dinner','生日晚餐'),tr('the big meal','今天的重頭戲')]]};
+    d[ix(7)] = {s:tr('City day','市區'), c:'--c-me', leave:true, sleep:'sh',
+      t:tr('Easy city day','輕鬆市區遊'),
+      n:tr('Gentle pace while 姨媽 recovers: the former French Concession (武康路, 安福路), cafés, and the Bund 外滩 at dusk.',
+           '姨媽跑完要休息，節奏放慢：逛前法租界（武康路、安福路）、咖啡店，黃昏去外滩。'),
+      food:[['本帮菜','红烧肉'],['葱油拌面',tr('scallion noodles','')]]};
+    d[ix(8)] = {s:tr('Suzhou trip','苏州一日遊'), c:'--c-trip', trip:true, leave:true, sleep:'sh',
+      t:tr('Day trip with the family','與家人一日遊'),
+      n:tr('The last full day with everyone in Shanghai: tomorrow the family leaves for Wuhan and 红 flies home. Suzhou 苏州 is 30 min by train (Humble Administrator\'s Garden 拙政园, Pingjiang Road 平江路). For a lighter day, take Metro Line 17 to Zhujiajiao 朱家角 water town.',
+           '大家在上海的最後一整天：明天家人去武汉，红回程。苏州坐高鐵約 30 分鐘（拙政园、平江路）；想輕鬆一點就坐地鐵 17 號線去朱家角水鄉。')
+        +(fr?tr(' Frankie may arrive from Hong Kong today.','Frankie 可能今天從香港來。'):''),
+      food:[['苏式汤面',tr('Suzhou noodles','')],[tr('Farewell dinner','餞別晚餐'),tr('with 红','與红')]]};
 
     if (state.da==='wuhan'){
-      d[ix(9)]  = {s:'→ 武汉', c:'--c-travel', leave:true, t:'Train to Wuhan with 姨媽, 亮, 许嵩', n:'About 4 h by high-speed train from Hongqiao. Say goodbye to 红 first: 红 flies out of Pudong at 15:25 (CZ6544). Evening walk on the Hankou riverside 汉口江滩.'+(fr?' Frankie stays in Shanghai without you unless Frankie comes along.':''), food:[['户部巷','snack street']], sleep:WH};
-      d[ix(10)] = {s:'武汉', c:'--c-trip', leave:true, t:'Yellow Crane Tower and the Yangtze', n:'Start with 过早, Wuhan\'s street breakfast, then Yellow Crane Tower 黄鹤楼 and a walk across the Yangtze River Bridge 长江大桥.', food:[['热干面','hot dry noodles'],['豆皮','sticky-rice skin'],['面窝','fried rice ring']], sleep:WH};
-      d[ix(11)] = {s:'武汉', c:'--c-trip', leave:true, t:'Museum and East Lake', n:'Hubei Provincial Museum 湖北省博物馆 for the Marquis Yi bronze bells 曾侯乙编钟, then walk or cycle the East Lake 东湖 greenway. Last day of annual leave.', food:[['排骨藕汤','lotus-root soup'],['武昌鱼','Wuchang bream']], sleep:WH};
-      d[ix(12)] = {s:'武汉', c:'--c-trip', t:'Slow Wuhan day', n:'The old lanes and cafés of Tanhualin 昙华林, or whatever the family fancies. Keat lands in Hong Kong today, a day before you.', food:[['周黑鸭','spicy duck neck']], sleep:WH};
-      d[ix(13)] = {s:'→ 香港', c:'--c-travel', t:'Train to Hong Kong with the family', n:'Wuhan to Hong Kong West Kowloon is about 4.5 h by high-speed train. Meet Keat. Remote work starts tomorrow evening.', food:[], sleep:HK};
+      d[ix(9)] = {s:tr('→ Wuhan','→ 武汉'), c:'--c-travel', leave:true, sleep:'wh',
+        t:tr('Train to Wuhan with 姨媽, 亮, 许嵩','與姨媽、亮、许嵩坐高鐵去武汉'),
+        n:tr('About 4 h by high-speed train from Hongqiao. Say goodbye to 红 first: 红 flies out of Pudong at 15:25 (CZ6544). Evening walk on the Hankou riverside 汉口江滩.',
+             '虹桥出發，高鐵約 4 小時。先送別红：红 15:25 從浦東起飛（CZ6544）。晚上去汉口江滩散步。')
+          +(fr?tr(' Frankie stays in Shanghai without you unless Frankie comes along.','Frankie 不跟去的話，會獨自留在上海。'):''),
+        food:[['户部巷',tr('snack street','小吃街')]]};
+      d[ix(10)] = {s:tr('Wuhan','武汉'), c:'--c-trip', leave:true, sleep:'wh',
+        t:tr('Yellow Crane Tower and the Yangtze','黄鹤楼與長江'),
+        n:tr('Start with 过早, Wuhan\'s street breakfast, then Yellow Crane Tower 黄鹤楼 and a walk across the Yangtze River Bridge 长江大桥.',
+             '先像本地人一樣「過早」，再去黄鹤楼，步行過长江大桥。'),
+        food:[['热干面',tr('hot dry noodles','')],['豆皮',tr('sticky-rice skin','')],['面窝',tr('fried rice ring','')]]};
+      d[ix(11)] = {s:tr('Wuhan','武汉'), c:'--c-trip', leave:true, sleep:'wh',
+        t:tr('Museum and East Lake','博物館與东湖'),
+        n:tr('Hubei Provincial Museum 湖北省博物馆 for the Marquis Yi bronze bells 曾侯乙编钟, then walk or cycle the East Lake 东湖 greenway. Last day of annual leave.',
+             '湖北省博物馆看曾侯乙编钟，然後去东湖綠道散步或騎單車。年假最後一天。'),
+        food:[['排骨藕汤',tr('lotus-root soup','')],['武昌鱼',tr('Wuchang bream','')]]};
+      d[ix(12)] = {s:tr('Wuhan','武汉'), c:'--c-trip', sleep:'wh',
+        t:tr('Slow Wuhan day','武汉慢遊'),
+        n:tr('The old lanes and cafés of Tanhualin 昙华林, or whatever the family fancies. Keat lands in Hong Kong today, a day before you.',
+             '逛昙华林老街和咖啡店，或跟家人隨意走走。Keat 今天抵達香港，比你早一天。'),
+        food:[['周黑鸭',tr('spicy duck neck','')]]};
+      d[ix(13)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', sleep:'hk',
+        t:tr('Train to Hong Kong with the family','與家人坐高鐵去香港'),
+        n:tr('Wuhan to Hong Kong West Kowloon is about 4.5 h by high-speed train. Meet Keat. Remote work starts tomorrow evening.',
+             '武汉到香港西九龍高鐵約 4.5 小時。和 Keat 會合。明晚開始遠程工作。'), food:[]};
     } else if (state.da==='sh'){
-      d[ix(9)]  = {s:'杭州', c:'--c-trip', trip:true, leave:true, t:'Hangzhou · 1 night', n:'The family leaves for Wuhan and 红 flies at 15:25, so head to Hangzhou: about 45–60 min from Hongqiao. Walk part of West Lake 西湖, then Lingyin Temple 灵隐寺.'+(fr?' Frankie comes too.':''), food:[['东坡肉','braised pork'],['龙井虾仁','tea shrimp']], sleep:HZ};
-      d[ix(10)] = {s:'杭州 → 上海', c:'--c-trip', trip:true, leave:true, t:'Tea village, back to Shanghai', n:'A morning tea tasting at Longjing 龙井村 or Meijiawu 梅家坞, then an afternoon train back.', food:[['片儿川','Hangzhou noodles']], sleep:SH};
-      d[ix(11)] = {s:'南京 or city', c:'--c-me', leave:true, t:'Nanjing day trip or a Shanghai day', n:'Nanjing 南京 is 1–1.5 h away (Ming city wall, Nanjing Museum). Or stay put: Shanghai Museum East 上海博物馆东馆, or Yu Garden 豫园. Last day of annual leave.', food:[['盐水鸭','Nanjing salted duck'],['小笼包','soup dumplings']], sleep:SH};
-      d[ix(12)] = {s:'上海', c:'--c-me', t:'Last Shanghai day', n:'Pack, shop, and see Lujiazui 陆家嘴 lit up at night. Keat lands in Hong Kong today, a day before you.', food:[['生煎包','pan-fried buns']], sleep:SH};
-      d[ix(13)] = {s:'→ 香港', c:'--c-travel', t:'Fly to Hong Kong', n:'About 2.5 h. The family arrives from Wuhan the same day. Meet Keat. Remote work starts tomorrow evening.', food:[], sleep:HK};
+      d[ix(9)] = {s:tr('Hangzhou','杭州'), c:'--c-trip', trip:true, leave:true, sleep:'hz',
+        t:tr('Hangzhou · 1 night','杭州 · 住一晚'),
+        n:tr('The family leaves for Wuhan and 红 flies at 15:25, so head to Hangzhou: about 45–60 min from Hongqiao. Walk part of West Lake 西湖, then Lingyin Temple 灵隐寺.',
+             '家人去武汉、红 15:25 起飛，你去杭州：虹桥出發約 45–60 分鐘。西湖走一段，再去灵隐寺。')
+          +(fr?tr(' Frankie comes too.','Frankie 一起去。'):''),
+        food:[['东坡肉',tr('braised pork','')],['龙井虾仁',tr('tea shrimp','')]]};
+      d[ix(10)] = {s:tr('Hangzhou → SH','杭州 → 上海'), c:'--c-trip', trip:true, leave:true, sleep:'sh',
+        t:tr('Tea village, back to Shanghai','茶村，回上海'),
+        n:tr('A morning tea tasting at Longjing 龙井村 or Meijiawu 梅家坞, then an afternoon train back.',
+             '早上在龙井村或梅家坞品茶，下午坐高鐵回上海。'),
+        food:[['片儿川',tr('Hangzhou noodles','')]]};
+      d[ix(11)] = {s:tr('Nanjing or city','南京或市區'), c:'--c-me', leave:true, sleep:'sh',
+        t:tr('Nanjing day trip or a Shanghai day','南京一日遊或上海市區'),
+        n:tr('Nanjing 南京 is 1–1.5 h away (Ming city wall, Nanjing Museum). Or stay put: Shanghai Museum East 上海博物馆东馆, or Yu Garden 豫园. Last day of annual leave.',
+             '南京約 1–1.5 小時（明城牆、南京博物院）。或留在上海：上海博物馆东馆，或豫园。年假最後一天。'),
+        food:[['盐水鸭',tr('Nanjing salted duck','')],['小笼包',tr('soup dumplings','')]]};
+      d[ix(12)] = {s:tr('Shanghai','上海'), c:'--c-me', sleep:'sh',
+        t:tr('Last Shanghai day','上海最後一天'),
+        n:tr('Pack, shop, and see Lujiazui 陆家嘴 lit up at night. Keat lands in Hong Kong today, a day before you.',
+             '收拾行李、購物，晚上看陆家嘴夜景。Keat 今天抵達香港，比你早一天。'),
+        food:[['生煎包',tr('pan-fried buns','')]]};
+      d[ix(13)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', sleep:'hk',
+        t:tr('Fly to Hong Kong','飛香港'),
+        n:tr('About 2.5 h. The family arrives from Wuhan the same day. Meet Keat. Remote work starts tomorrow evening.',
+             '約 2.5 小時。家人同日從武汉到。和 Keat 會合。明晚開始遠程工作。'), food:[]};
     } else {
-      d[ix(9)]  = {s:'→ 香港', c:'--c-travel', leave:true, t:'Fly to Hong Kong', n:'About 2.5 h. The family takes the train to Wuhan and 红 flies out of Pudong at 15:25, so everyone leaves on the same day.'+(fr?' Frankie\'s Shanghai days would be without you, so see Frankie in Hong Kong instead.':''), food:[], sleep:HK};
-      d[ix(10)] = {s:'香港', c:'--c-me', leave:true, t:'Hong Kong, on leave', n:'Settle into your Hong Kong base before work starts: SIM, Octopus card, and somewhere to work from in the evenings.', food:[], sleep:HK};
-      d[ix(11)] = {s:'香港', c:'--c-me', leave:true, t:'Hong Kong, on leave', n:'Last day of annual leave.', food:[], sleep:HK};
-      d[ix(12)] = {s:'香港 · Keat', c:'--c-keat', t:'Keat lands', n:'You\'re already there to meet Keat.', food:[], sleep:HK};
-      d[ix(13)] = {s:'香港 · Keat', c:'--c-keat', t:'Family arrives from Wuhan', n:'姨媽, 亮 and 许嵩 arrive from Wuhan. Remote work starts tomorrow evening.', food:[], sleep:HK};
+      d[ix(9)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', leave:true, sleep:'hk',
+        t:tr('Fly to Hong Kong','飛香港'),
+        n:tr('About 2.5 h. The family takes the train to Wuhan and 红 flies out of Pudong at 15:25, so everyone leaves on the same day.',
+             '約 2.5 小時。家人同日坐高鐵去武汉，红 15:25 從浦東起飛，大家同一天出發。')
+          +(fr?tr(' Frankie\'s Shanghai days would be without you, so see Frankie in Hong Kong instead.','Frankie 在上海的日子你不在，不如在香港見。'):''), food:[]};
+      d[ix(10)] = {s:tr('Hong Kong','香港'), c:'--c-me', leave:true, sleep:'hk',
+        t:tr('Hong Kong, on leave','在香港放假'),
+        n:tr('Settle into your Hong Kong base before work starts: SIM, Octopus card, and somewhere to work from in the evenings.',
+             '開工前安頓好：電話卡、八達通、晚上工作的地方。'), food:[]};
+      d[ix(11)] = {s:tr('Hong Kong','香港'), c:'--c-me', leave:true, sleep:'hk',
+        t:tr('Hong Kong, on leave','在香港放假'), n:tr('Last day of annual leave.','年假最後一天。'), food:[]};
+      d[ix(12)] = {s:tr('HK · Keat','香港 · Keat'), c:'--c-keat', sleep:'hk',
+        t:tr('Keat lands','Keat 抵達'), n:tr('You\'re already there to meet Keat.','你已在香港，可以接 Keat。'), food:[]};
+      d[ix(13)] = {s:tr('HK · Keat','香港 · Keat'), c:'--c-keat', sleep:'hk',
+        t:tr('Family arrives from Wuhan','家人從武汉到'),
+        n:tr('姨媽, 亮 and 许嵩 arrive from Wuhan. Remote work starts tomorrow evening.','姨媽、亮和许嵩從武汉到。明晚開始遠程工作。'), food:[]};
     }
 
     if (state.cal!=='no'){
       var c = d[ix(Number(state.cal))];
-      c.cal = true;
-      c.t += ' · with Calvin 曾致';
-      c.n += ' Calvin works in Shanghai and has one free weekday, pencilled in for today.';
+      c.t += tr(' · with Calvin 曾致',' · 與 Calvin（曾致）');
+      c.n += tr(' Calvin works in Shanghai and has one free weekday, pencilled in for today.','Calvin 在上海上班，平日只有一天有空，暫定今天。');
     }
     return d;
   }
 
-  var FAMILY = [
-    {k:'ming', name:'明', sub:'姨媽', c:'--c-family', legs:[[0,5,SH,'UA857 lands Pudong 18:34 on 12.3'],[6,9,WH,'To Wuhan with 亮 and 许嵩'],[10,10,HK,'Flies home to the US on UA862, HKG 10:35 on 12.16']]},
-    {k:'liang', name:'亮', c:'--c-family2', legs:[[0,5,SH,'Lands Pudong T2 16:00 on 12.3'],[6,9,WH,'To Wuhan with 姨媽 and 许嵩'],[10,10,'香港 · home','Back home in Hong Kong']]},
-    {k:'xs', name:'许嵩', c:'--c-family3', legs:[[0,5,SH,'Lands Pudong T2 16:00 on 12.3'],[6,9,WH,'To Wuhan with 姨媽 and 亮'],[10,10,HK,'Hong Kong until 12.16']]},
-    {k:'hong', name:'红', c:'--c-hong', legs:[[2,6,SH,'CZ6543 lands Pudong 14:20 on 12.5 · CZ6544 leaves Pudong 15:25 on 12.9']]}
-  ];
+  function family(){
+    return [
+      {k:'ming', name:'明', sub:'姨媽', c:'--c-family', legs:[[0,5,place('sh'),tr('UA857 lands Pudong 18:34 on 12.3','UA857 12.3 18:34 抵達浦東')],[6,9,place('wh'),tr('To Wuhan with 亮 and 许嵩','與亮、许嵩去武汉')],[10,10,place('hk'),tr('Flies home to the US on UA862, HKG 10:35 on 12.16','12.16 UA862 10:35 從香港回美國')]]},
+      {k:'liang', name:'亮', c:'--c-family2', legs:[[0,5,place('sh'),tr('Lands Pudong T2 16:00 on 12.3','12.3 16:00 抵達浦東 T2')],[6,9,place('wh'),tr('To Wuhan with 姨媽 and 许嵩','與姨媽、许嵩去武汉')],[10,10,tr('HK · home','香港 · 回家'),tr('Back home in Hong Kong','回到香港的家')]]},
+      {k:'xs', name:'许嵩', c:'--c-family3', legs:[[0,5,place('sh'),tr('Lands Pudong T2 16:00 on 12.3','12.3 16:00 抵達浦東 T2')],[6,9,place('wh'),tr('To Wuhan with 姨媽 and 亮','與姨媽、亮去武汉')],[10,10,place('hk'),tr('Hong Kong until 12.16','在香港至 12.16')]]},
+      {k:'hong', name:'红', c:'--c-hong', legs:[[2,6,place('sh'),tr('CZ6543 lands Pudong 14:20 on 12.5 · CZ6544 leaves Pudong 15:25 on 12.9','CZ6543 12.5 14:20 抵達浦東 · CZ6544 12.9 15:25 浦東起飛')]]}
+    ];
+  }
 
   function hkDay(){ return state.da==='hk' ? ix(9) : ix(13); }
 
   function renderTimeline(d){
+    var FAM = family();
     var lanes = [
-      {k:'ms', name:'時刻', sub:'Moments', h:54},
-      {k:'me', name:'達', sub:'You', h:40},
-      {k:'sleep', name:'住', sub:'You sleep in', h:32},
-      {k:'al', name:'假', sub:'Annual leave', h:28}
-    ].concat(FAMILY.map(function(p){ return {k:p.k, name:p.name, sub:p.sub||'Family', h:32}; }))
-     .concat([{k:'cal', name:'Calvin', sub:'曾致', h:32},{k:'fr', name:'Frankie', sub:'Friend', h:32},{k:'keat', name:'Keat', sub:'Friend', h:32}]);
+      {k:'ms', name:tr('Moments','時刻'), sub:'', h:54},
+      {k:'me', name:'達', sub:tr('You','我'), h:40},
+      {k:'sleep', name:tr('Sleep','住'), sub:tr('Where you sleep','住宿地點'), h:32},
+      {k:'al', name:tr('Leave','年假'), sub:'', h:28}
+    ].concat(FAM.map(function(p){ return {k:p.k, name:p.name, sub:p.sub||tr('Family','家人'), h:32}; }))
+     .concat([{k:'cal', name:'Calvin', sub:'曾致', h:32},{k:'fr', name:'Frankie', sub:tr('Friend','朋友'), h:32},{k:'keat', name:'Keat', sub:tr('Friend','朋友'), h:32}]);
     var tl = document.getElementById('tl');
     tl.style.gridTemplateRows = '20px 22px 18px ' + lanes.map(function(l){return l.h+'px';}).join(' ');
     var h = [];
@@ -308,9 +381,9 @@ section{display:grid;gap:14px;min-width:0}
       var w = day(i).getUTCDay(), we = (w===0||w===6);
       h.push('<div class="col'+(we?' we':'')+(i<ix(5)?' pre':'')+'" style="grid-row:1 / -1;grid-column:'+(i+2)+'"></div>');
       h.push('<div class="dn'+(we?' we':'')+'" style="grid-row:2;grid-column:'+(i+2)+'">'+day(i).getUTCDate()+'</div>');
-      h.push('<div class="dw'+(we?' we':'')+'" style="grid-row:3;grid-column:'+(i+2)+'">'+WK[w]+'</div>');
+      h.push('<div class="dw'+(we?' we':'')+'" style="grid-row:3;grid-column:'+(i+2)+'">'+tr(WK_EN[w],WK_ZH[w])+'</div>');
     }
-    h.push('<div class="mo" style="grid-row:1;'+col(0,N-1)+'">12月 DEC 2026</div>');
+    h.push('<div class="mo" style="grid-row:1;'+col(0,N-1)+'">'+tr('DEC 2026','2026年12月')+'</div>');
     h.push('<div class="lab" style="grid-row:1 / 4;grid-column:1"></div>');
     lanes.forEach(function(l,r){
       h.push('<div class="lab'+(l.k==='ming'||l.k==='cal'?' gap':'')+'" style="grid-row:'+(r+4)+';grid-column:1">'+esc(l.name)+(l.sub?'<small>'+esc(l.sub)+'</small>':'')+'</div>');
@@ -319,82 +392,99 @@ section{display:grid;gap:14px;min-width:0}
     function seg(lane,a,b,text,c,tent,tip){
       h.push('<div class="seg'+(tent?' tent':'')+'" style="grid-row:'+rowOf(lane)+';'+col(a,b)+'--c:var('+c+')" title="'+esc(tip||text)+'"><span>'+esc(text)+'</span></div>');
     }
-    // Merge neighbouring days with the same label so multi-day stays read as one bar.
-    function runs(lane, key, colourOf){
+    // Merge neighbouring days with the same key so multi-day stays read as one bar.
+    function runs(lane, key, label, colourOf){
       var a=ix(5);
       for (var j=a+1;j<=N;j++){
-        if (j===N || d[j][key]!==d[a][key]){ seg(lane, a, j-1, d[a][key], colourOf(d[a]), false, d[a].t); a=j; }
+        if (j===N || d[j][key]!==d[a][key]){ seg(lane, a, j-1, label(d[a]), colourOf(d[a]), false, d[a].t); a=j; }
       }
     }
 
     [
-      [ix(3),'Family lands','top',''],
-      [ix(5),'達 lands 22:10','bot',''],
+      [ix(3),tr('Family lands','家人抵滬'),'top',''],
+      [ix(5),tr('達 lands 22:10','達 22:10 抵滬'),'bot',''],
       [ix(6),'姨媽 跑馬 + 生日','top',''],
-      [ix(9),'红 flies · family → 武汉','bot',''],
+      [ix(9),tr('红 flies · family → 武汉','红回程 · 家人去武汉'),'bot',''],
       [hkDay(),'達 → 香港','top',state.da==='hk'?'':'end']
     ].forEach(function(m){
       h.push('<div class="ms" style="grid-row:'+rowOf('ms')+';grid-column:'+(m[0]+2)+'"><i class="dot"></i><span class="ml '+m[2]+' '+m[3]+'">'+esc(m[1])+'</span></div>');
     });
 
-    runs('me','s',function(x){ return x.c; });
-    runs('sleep','sleep',function(x){ return x.sleep===SH ? '--c-home' : x.sleep===HK ? '--c-travel' : '--c-trip'; });
-    LEAVE.forEach(function(i){ h.push('<div class="off" style="grid-row:'+rowOf('al')+';grid-column:'+(i+2)+'" title="Annual leave '+fmtD(i)+'">AL</div>'); });
+    runs('me','s',function(x){ return x.s; },function(x){ return x.c; });
+    runs('sleep','sleep',function(x){ return place(x.sleep); },function(x){ return x.sleep==='sh' ? '--c-home' : x.sleep==='hk' ? '--c-travel' : '--c-trip'; });
+    LEAVE.forEach(function(i){ h.push('<div class="off" style="grid-row:'+rowOf('al')+';grid-column:'+(i+2)+'" title="'+esc(tr('Annual leave','年假')+' '+fmtD(i))+'">'+tr('AL','假')+'</div>'); });
 
-    FAMILY.forEach(function(p){ p.legs.forEach(function(l){ seg(p.k,l[0],l[1],l[2],p.c,false,l[3]); }); });
-    if (state.cal!=='no'){ var cd=ix(Number(state.cal)); seg('cal',cd,cd,'Meet','--c-cal',true,'Calvin works in Shanghai: one free weekday, '+fmtD(cd)); }
+    FAM.forEach(function(p){ p.legs.forEach(function(l){ seg(p.k,l[0],l[1],l[2],p.c,false,l[3]); }); });
+    if (state.cal!=='no'){ var cd=ix(Number(state.cal)); seg('cal',cd,cd,tr('Meet','見面'),'--c-cal',true,tr('Calvin works in Shanghai: one free weekday, ','Calvin 在上海上班：平日一天，')+fmtD(cd)); }
     if (state.fr==='yes'){
-      seg('fr',0,ix(7),HK,'--c-frankie',false,'Frankie is based in Hong Kong from 11.26');
-      seg('fr',ix(8),ix(12),'上海 (optional)','--c-frankie',true,'Optional: joins you in Shanghai 12.8–12.12');
-      seg('fr',ix(13),ix(13),HK,'--c-frankie',false,'Back in Hong Kong');
-    } else seg('fr',0,N-1,'香港 · base','--c-frankie',false,'Frankie is based in Hong Kong from 11.26 to 1.9');
-    seg('keat',ix(12),ix(13),'香港 from 12.12','--c-keat',true,'Keat visits Hong Kong 12.12–12.18');
+      seg('fr',0,ix(7),place('hk'),'--c-frankie',false,tr('Frankie is based in Hong Kong from 11.26','Frankie 11.26 起在香港'));
+      seg('fr',ix(8),ix(12),tr('Shanghai (optional)','上海（可選）'),'--c-frankie',true,tr('Optional: joins you in Shanghai 12.8–12.12','可選：12.8–12.12 來上海'));
+      seg('fr',ix(13),ix(13),place('hk'),'--c-frankie',false,tr('Back in Hong Kong','回香港'));
+    } else seg('fr',0,N-1,tr('Hong Kong · base','香港 · 基地'),'--c-frankie',false,tr('Frankie is based in Hong Kong from 11.26 to 1.9','Frankie 11.26 至 1.9 在香港'));
+    seg('keat',ix(12),ix(13),tr('HK from 12.12','12.12 起在香港'),'--c-keat',true,tr('Keat visits Hong Kong 12.12–12.18','Keat 12.12–12.18 來香港'));
 
     tl.innerHTML = h.join('');
   }
 
   function renderText(d){
-    var hk = hkDay(), clash = hk>ix(12);
+    var clash = hkDay()>ix(12);
     var al = document.getElementById('keat-alert');
     al.className = 'alert'+(clash?'':' ok');
     al.innerHTML = clash
-      ? '<b>Date clash: Keat lands in Hong Kong on 12.12, you get there on 12.13</b><span>Keat would spend a day in Hong Kong without you. Ask Keat to land on 12.13, or switch to HK first above. The main page lets you move Keat\'s dates.</span>'
-      : '<b>No clash: you reach Hong Kong on 12.9, and Keat lands on 12.12</b><span>You have three days in Hong Kong to settle in before Keat arrives.</span>';
+      ? '<b>'+esc(tr('Date clash: Keat lands in Hong Kong on 12.12, you get there on 12.13','日期衝突：Keat 12.12 抵達香港，你 12.13 才到'))+'</b><span>'+
+        esc(tr('Keat would spend a day in Hong Kong without you. Ask Keat to land on 12.13, or switch to HK first above. The main page lets you move Keat\'s dates.',
+               'Keat 會獨自在香港一天。請 Keat 改到 12.13 抵達，或在上面選「先去香港」。主頁可以調整 Keat 的日期。'))+'</span>'
+      : '<b>'+esc(tr('No clash: you reach Hong Kong on 12.9, and Keat lands on 12.12','沒有衝突：你 12.9 到香港，Keat 12.12 抵達'))+'</b><span>'+
+        esc(tr('You have three days in Hong Kong to settle in before Keat arrives.','Keat 到之前你有三天在香港安頓。'))+'</span>';
 
-    var AFTER = {wuhan:['武汉 12.9–12.12','武汉 → 香港'], hk:['香港 from 12.9','香港'], sh:['上海 until 12.13','香港']}[state.da];
+    var AFTER = {wuhan:[tr('Wuhan 12.9–12.12','武汉 12.9–12.12'),'武汉 → 香港'], hk:[tr('Hong Kong from 12.9','12.9 起在香港'),'香港'], sh:[tr('Shanghai until 12.13','留上海至 12.13'),'香港']}[state.da];
     document.getElementById('f-after').textContent = AFTER[0];
     document.getElementById('eb-next').textContent = AFTER[1];
     var friends = [];
     if (state.cal!=='no') friends.push('Calvin');
     if (state.fr==='yes') friends.push('Frankie?');
-    friends.push('Keat (HK)');
+    friends.push(tr('Keat (HK)','Keat（香港）'));
     document.getElementById('f-friends').textContent = friends.join(' · ');
 
-    document.getElementById('itin-note').innerHTML = 'Showing: <b>'+esc({wuhan:'Wuhan with the family', hk:'Hong Kong first', sh:'stay in Shanghai'}[state.da])+'</b>. Use the switches above to compare.'+
-      (FILE ? ' Details: <a href="Shanghai-itinerary.md">itinerary</a> · <a href="Day-trips.md">day trips</a> · <a href="Checklist.md">checklist</a>.' : '');
+    var showing = {wuhan:tr('Wuhan with the family','與家人去武汉'), hk:tr('Hong Kong first','先去香港'), sh:tr('stay in Shanghai','留在上海')}[state.da];
+    document.getElementById('itin-note').innerHTML = tr('Showing: ','目前顯示：')+'<b>'+esc(showing)+'</b>'+tr('. Use the switches above to compare.','。用上面的開關比較。')+
+      (FILE ? tr(' Details: ',' 詳情：')+'<a href="Shanghai-itinerary.md">'+tr('itinerary','行程')+'</a> · <a href="Day-trips.md">'+tr('day trips','一日遊')+'</a> · <a href="Checklist.md">'+tr('checklist','清單')+'</a>' : '');
 
-    var items = [{d:fmtD(ix(3)), pre:true, t:'Family lands in Shanghai', n:'姨媽 (明) on UA857, Pudong 18:34. 亮 and 许嵩 land at Pudong T2 at 16:00. You follow on 12.5.', food:[]}];
+    var AL = tr('AL','年假');
+    var items = [{d:fmtD(ix(3)), pre:true, t:tr('Family lands in Shanghai','家人抵達上海'),
+      n:tr('姨媽 (明) on UA857, Pudong 18:34. 亮 and 许嵩 land at Pudong T2 at 16:00. You follow on 12.5.','姨媽（明）乘 UA857，18:34 抵達浦東；亮和许嵩 16:00 抵達浦東 T2。你 12.5 到。'), food:[]}];
     for (var i=ix(5);i<N;i++) items.push(Object.assign({d:fmtD(i)}, d[i]));
     document.getElementById('itin').innerHTML = items.map(function(x){
-      var away = x.sleep && x.sleep!==SH && x.sleep!==HK;
+      var away = x.sleep && x.sleep!=='sh' && x.sleep!=='hk';
       return '<li'+(x.pre?' class="pre"':'')+'><div class="d">'+esc(x.d)+'</div><div><div class="t">'+esc(x.t)+
-        (x.leave?'<span class="tag leave">AL</span>':'')+(x.trip?'<span class="tag">day trip</span>':'')+(away?'<span class="tag sleep">night in '+esc(x.sleep)+'</span>':'')+
+        (x.leave?'<span class="tag leave">'+esc(AL)+'</span>':'')+(x.trip?'<span class="tag">'+esc(tr('day trip','一日遊'))+'</span>':'')+
+        (away?'<span class="tag sleep">'+esc(tr('night in ','住')+place(x.sleep))+'</span>':'')+
         '</div><div class="n">'+esc(x.n)+'</div>'+
         (x.food&&x.food.length?'<div class="ideas">'+x.food.map(function(p){return '<span>'+esc(p[0])+(p[1]?' <em>'+esc(p[1])+'</em>':'')+'</span>';}).join('')+'</div>':'')+'</div></li>';
     }).join('');
 
-    var frNote = state.fr!=='yes' ? 'Frankie is in Hong Kong the whole time, so you\'ll see Frankie there.'
-      : state.da==='sh' ? 'Frankie\'s optional Shanghai stay (12.8–12.12) lines up exactly with yours.'
-      : 'Frankie may come to Shanghai 12.8–12.12, but you leave on 12.9, so you\'d only overlap on 12.8'+(state.da==='wuhan'?' unless Frankie comes to Wuhan.':'. Seeing Frankie in Hong Kong may be easier.');
+    var frNote = state.fr!=='yes' ? tr('Frankie is in Hong Kong the whole time, so you\'ll see Frankie there.','Frankie 一直在香港，在那裡見面就好。')
+      : state.da==='sh' ? tr('Frankie\'s optional Shanghai stay (12.8–12.12) lines up exactly with yours.','Frankie 可選的上海行程（12.8–12.12）剛好和你一致。')
+      : tr('Frankie may come to Shanghai 12.8–12.12, but you leave on 12.9, so you\'d only overlap on 12.8','Frankie 可能 12.8–12.12 來上海，但你 12.9 就走，只會重疊 12.8 一天')
+        + (state.da==='wuhan' ? tr(' unless Frankie comes to Wuhan.','，除非 Frankie 一起去武汉。') : tr('. Seeing Frankie in Hong Kong may be easier.','，不如在香港見。'));
+    var OPEN=tr('Open','待定');
     var decs = [
-      {c:'open',l:'Open',h:'After Shanghai: where do you go?',p:'The family goes to Wuhan on 12.9 and reaches Hong Kong on 12.13. Join them, go ahead to Hong Kong, or stay around Shanghai. This is the same choice as on the main page.'}
+      {c:'open',l:OPEN,h:tr('After Shanghai: where do you go?','上海之後去哪？'),
+        p:tr('The family goes to Wuhan on 12.9 and reaches Hong Kong on 12.13. Join them, go ahead to Hong Kong, or stay around Shanghai. This is the same choice as on the main page.',
+             '家人 12.9 去武汉，12.13 到香港。你可以同去、先去香港，或留在上海周边。和主頁是同一個選擇。')}
     ];
-    if (clash) decs.push({c:'clash',l:'Clash',h:'Keat\'s arrival',p:'Keat lands on 12.12, and you reach Hong Kong on 12.13. Move Keat a day later, or go to Hong Kong first.'});
+    if (clash) decs.push({c:'clash',l:tr('Clash','衝突'),h:tr('Keat\'s arrival','Keat 的抵達日'),
+      p:tr('Keat lands on 12.12, and you reach Hong Kong on 12.13. Move Keat a day later, or go to Hong Kong first.','Keat 12.12 抵達，你 12.13 才到香港。請 Keat 晚一天，或你先去香港。')});
     decs.push(
-      {c:'open',l:'Open',h:'Frankie',p:frNote},
-      {c:'open',l:'Open',h:'Meeting Calvin 曾致',p:state.cal==='no'?'Not meeting at the moment. Calvin works, so it would be one weekday: 12.7 or 12.8 while the family is still here.':'Calvin works, so only one weekday. Pencilled in for '+fmtD(ix(Number(state.cal)))+'. Confirm with Calvin.'},
-      {c:'check',l:'Check',h:'姨媽\'s race day',p:'Her start time and expected finish, a cheering spot and a meeting point. Plan the birthday dinner around how she feels afterwards.'},
-      {c:'open',l:'Open',h:'Where you sleep in Shanghai',p:'With the family, or a hotel. You arrive at Hongqiao late, and Hongqiao station is also where the Suzhou, Hangzhou and Wuhan trains leave from.'}
+      {c:'open',l:OPEN,h:'Frankie',p:frNote},
+      {c:'open',l:OPEN,h:tr('Meeting Calvin 曾致','和 Calvin（曾致）見面'),
+        p:state.cal==='no'
+          ? tr('Not meeting at the moment. Calvin works, so it would be one weekday: 12.7 or 12.8 while the family is still here.','目前不見面。Calvin 要上班，只能平日一天：12.7 或 12.8，家人還在上海時。')
+          : tr('Calvin works, so only one weekday. Pencilled in for '+fmtD(ix(Number(state.cal)))+'. Confirm with Calvin.','Calvin 要上班，平日只有一天。暫定 '+fmtD(ix(Number(state.cal)))+'，記得和 Calvin 確認。')},
+      {c:'check',l:tr('Check','核對'),h:tr('姨媽\'s race day','姨媽的跑馬日'),
+        p:tr('Her start time and expected finish, a cheering spot and a meeting point. Plan the birthday dinner around how she feels afterwards.','她的起跑和預計完賽時間、打氣地點和會合點。生日晚餐看她跑完後的狀態再安排。')},
+      {c:'open',l:OPEN,h:tr('Where you sleep in Shanghai','在上海住哪裡'),
+        p:tr('With the family, or a hotel. You arrive at Hongqiao late, and Hongqiao station is also where the Suzhou, Hangzhou and Wuhan trains leave from.','跟家人住，或住酒店。你深夜到虹桥，而去苏州、杭州、武汉的高鐵也從虹桥站出發。')}
     );
     document.getElementById('dec').innerHTML = decs.map(function(x){
       return '<li><div class="h"><span class="chip '+x.c+'">'+esc(x.l)+'</span>'+esc(x.h)+'</div><p>'+esc(x.p)+'</p></li>';
@@ -402,45 +492,51 @@ section{display:grid;gap:14px;min-width:0}
 
     var inPlan = ['suzhou','zhujiajiao'].concat(state.da==='sh' ? ['hangzhou','nanjing'] : []);
     var opts = [
-      ['suzhou','苏州 Suzhou','~30 min','Gardens, canals and noodles. The easy choice for 12.8 with the family.'],
-      ['zhujiajiao','朱家角 Zhujiajiao','~1 h metro','The closest water town. No train to book.'],
-      ['hangzhou','杭州 Hangzhou','~45–60 min','West Lake, temples and tea villages. Best with one night.'],
-      ['nanjing','南京 Nanjing','~1–1.5 h','History and museums, duck and snacks.'],
-      ['towns','乌镇 / 西塘 Wuzhen / Xitang','~1.5–2 h','Canal towns. Wuzhen is at its best at night, so stay over.']
+      ['suzhou',tr('苏州 Suzhou','苏州'),tr('~30 min','約 30 分鐘'),tr('Gardens, canals and noodles. The easy choice for 12.8 with the family.','園林、運河和麵。12.8 和家人去最輕鬆。')],
+      ['zhujiajiao',tr('朱家角 Zhujiajiao','朱家角'),tr('~1 h metro','地鐵約 1 小時'),tr('The closest water town. No train to book.','最近的水鄉，不用訂火車票。')],
+      ['hangzhou',tr('杭州 Hangzhou','杭州'),tr('~45–60 min','約 45–60 分鐘'),tr('West Lake, temples and tea villages. Best with one night.','西湖、寺廟和茶村，最好住一晚。')],
+      ['nanjing',tr('南京 Nanjing','南京'),tr('~1–1.5 h','約 1–1.5 小時'),tr('History and museums, duck and snacks.','歷史、博物館、鴨子和小吃。')],
+      ['towns',tr('乌镇 / 西塘 Wuzhen / Xitang','乌镇 / 西塘'),tr('~1.5–2 h','約 1.5–2 小時'),tr('Canal towns. Wuzhen is at its best at night, so stay over.','水鄉古鎮。乌镇夜景最美，值得住一晚。')]
     ];
+    var onLabel = tr('in your plan','已在計劃中');
     document.getElementById('opts').innerHTML = opts.map(function(o){
-      return '<li'+(inPlan.indexOf(o[0])>-1?' class="on"':'')+'><b>'+esc(o[1])+'</b><span class="tm">'+esc(o[2])+'</span><p>'+esc(o[3])+'</p></li>';
+      return '<li'+(inPlan.indexOf(o[0])>-1?' class="on"':'')+'><b data-on="'+esc(onLabel)+'">'+esc(o[1])+'</b><span class="tm">'+esc(o[2])+'</span><p>'+esc(o[3])+'</p></li>';
     }).join('');
 
-    document.querySelectorAll('.seggrp').forEach(function(g){
-      var k=g.getAttribute('data-k');
-      g.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String(state[k]===b.getAttribute('data-v'))); });
-    });
+    var know = [
+      [tr('Late arrival:','深夜抵達：'),tr('CZ3596 lands at Hongqiao 虹桥 at 22:10. Plan on a taxi or DiDi to wherever you\'re staying, and nothing else that night.','CZ3596 22:10 抵達虹桥。坐的士或 DiDi 直接去住處，當晚不要安排其他事。')],
+      [tr('Weather:','天氣：'),tr('Shanghai is about 4–12 °C in early December, damp and often grey. Wuhan is similar or a little colder. Older buildings are poorly heated, so pack layers and a waterproof, plus something warm for standing out at the race.',
+                               '上海 12 月初約 4–12 °C，潮濕多陰天；武汉差不多或更冷一點。老房子暖氣不足，帶多層衣服和防水外套，還有在跑馬場邊站著打氣時保暖的衣物。')],
+      [tr('Internet:','上網：'),tr('Google and WhatsApp are blocked on the mainland. Set up a roaming eSIM or VPN before 12.5.','內地封鎖 Google 和 WhatsApp。12.5 前設定好漫遊 eSIM 或 VPN。')],
+      [tr('Paying:','付款：'),tr('Link Alipay or WeChat Pay to a foreign card, and add DiDi for taxis. Carry a little cash.','把支付寶或微信支付綁定海外信用卡，再裝 DiDi 叫車。帶少量現金。')],
+      [tr('Trains:','火車：'),tr('Book on 12306 or Trip.com. Your passport is the ticket, and sales open about 15 days ahead. The Wuhan → Hong Kong train clears immigration at West Kowloon 西九龍.','在 12306 或 Trip.com 訂票，護照就是車票，約提前 15 天開售。武汉到香港的高鐵在西九龍過關。')]
+    ];
+    document.getElementById('know').innerHTML = know.map(function(k){ return '<li><b>'+esc(k[0])+'</b> '+esc(k[1])+'</li>'; }).join('');
   }
 
   function renderChecks(){
     var list = [
-      ['flt-in','Flight in: CZ3596 → Hongqiao 22:10','booked',true],
-      ['race','姨媽\'s race: start time, cheering spot','12.6'],
-      ['gift','Birthday gift for 姨媽','by 12.6'],
-      ['stay','Shanghai: with family or a hotel', state.da==='sh' ? '12.5–12.12' : '12.5–12.8']
+      ['flt-in',tr('Flight in: CZ3596 → Hongqiao 22:10','去程：CZ3596 → 虹桥 22:10'),tr('booked','已訂'),true],
+      ['race',tr('姨媽\'s race: start time, cheering spot','姨媽跑馬：起跑時間、打氣地點'),'12.6'],
+      ['gift',tr('Birthday gift for 姨媽','姨媽的生日禮物'),tr('by 12.6','12.6 前')],
+      ['stay',tr('Shanghai: with family or a hotel','上海住宿：跟家人或酒店'), state.da==='sh' ? '12.5–12.12' : '12.5–12.8']
     ];
-    if (state.cal!=='no') list.push(['calvin','Confirm the day with Calvin 曾致','12.'+state.cal]);
-    list.push(['sz','Suzhou trains, or Zhujiajiao by metro','12.8']);
+    if (state.cal!=='no') list.push(['calvin',tr('Confirm the day with Calvin 曾致','和 Calvin（曾致）確認日子'),'12.'+state.cal]);
+    list.push(['sz',tr('Suzhou trains, or Zhujiajiao by metro','苏州火車票，或坐地鐵去朱家角'),'12.8']);
     if (state.da==='wuhan') list.push(
-      ['wh-train','Train Shanghai → Wuhan','12.9'],
-      ['wh-stay','Wuhan hotel, with the family','12.9–12.12'],
-      ['to-hk','Train Wuhan → Hong Kong West Kowloon','12.13']);
+      ['wh-train',tr('Train Shanghai → Wuhan','上海 → 武汉 火車'),'12.9'],
+      ['wh-stay',tr('Wuhan hotel, with the family','武汉酒店（與家人）'),'12.9–12.12'],
+      ['to-hk',tr('Train Wuhan → Hong Kong West Kowloon','武汉 → 香港西九龍 火車'),'12.13']);
     else if (state.da==='sh') list.push(
-      ['hz','Hangzhou hotel and trains','12.9–12.10'],
-      ['to-hk','Flight Shanghai → Hong Kong','12.13']);
+      ['hz',tr('Hangzhou hotel and trains','杭州酒店和火車'),'12.9–12.10'],
+      ['to-hk',tr('Flight Shanghai → Hong Kong','上海 → 香港 機票'),'12.13']);
     else list.push(
-      ['to-hk','Flight Shanghai → Hong Kong','12.9'],
-      ['hk-early','Hong Kong stay from 12.9','12.9 →']);
+      ['to-hk',tr('Flight Shanghai → Hong Kong','上海 → 香港 機票'),'12.9'],
+      ['hk-early',tr('Hong Kong stay from 12.9','12.9 起香港住宿'),'12.9 →']);
     list.push(
-      ['entry','Entry rules for your passport','before Dec'],
-      ['esim','eSIM / VPN for mainland China','before 12.5'],
-      ['pay','Alipay / WeChat Pay and DiDi','before 12.5']);
+      ['entry',tr('Entry rules for your passport','護照入境規定'),tr('before Dec','12月前')],
+      ['esim',tr('eSIM / VPN for mainland China','內地用 eSIM / VPN'),tr('before 12.5','12.5 前')],
+      ['pay',tr('Alipay / WeChat Pay and DiDi','支付寶／微信支付和 DiDi'),tr('before 12.5','12.5 前')]);
     var done={};
     try{ done=JSON.parse(localStorage.getItem('sh-checks')||'{}')||{}; }catch(e){}
     document.getElementById('check').innerHTML = list.map(function(x){
@@ -448,10 +544,23 @@ section{display:grid;gap:14px;min-width:0}
     }).join('');
   }
 
+  function applyLang(){
+    document.documentElement.lang = L==='zh' ? 'zh-Hant' : 'en';
+    document.querySelectorAll('[data-en]').forEach(function(el){ el.textContent = el.getAttribute('data-'+L); });
+  }
+  function syncToggles(){
+    document.querySelectorAll('.seggrp').forEach(function(g){
+      var k=g.getAttribute('data-k'), cur = k==='lang' ? L : state[k];
+      g.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String(cur===b.getAttribute('data-v'))); });
+    });
+  }
+
   document.addEventListener('click',function(e){
     var b=e.target.closest('.seggrp button'); if(!b) return;
-    state[b.parentNode.getAttribute('data-k')] = b.getAttribute('data-v');
-    save(); renderAll();
+    var k=b.parentNode.getAttribute('data-k'), v=b.getAttribute('data-v');
+    if (k==='lang'){ L=v; try{ localStorage.setItem('wt-lang',L); }catch(err){} }
+    else { state[k]=v; save(); }
+    renderAll();
   });
   document.addEventListener('change',function(e){
     if(!e.target.matches('.check input')) return;
@@ -461,7 +570,7 @@ section{display:grid;gap:14px;min-width:0}
     try{ localStorage.setItem('sh-checks',JSON.stringify(done)); }catch(err){}
   });
 
-  function renderAll(){ var d=plan(); renderTimeline(d); renderText(d); renderChecks(); }
+  function renderAll(){ var d=plan(); applyLang(); renderTimeline(d); renderText(d); renderChecks(); syncToggles(); }
   renderAll();
 })();
 </script>
