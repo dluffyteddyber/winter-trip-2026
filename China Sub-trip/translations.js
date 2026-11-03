@@ -953,6 +953,41 @@
    'RMB stays primary · 1 RMB ≈ {rate} · reference rate: {date} (not live).':'以人民幣為主 · 人民幣1元 ≈ {rate} · 參考匯率：{date}（非即時）。',
    'ECB reference rates ↗':'ECB參考匯率 ↗'
  });
+ const flightTranslations=[
+  ['Flights','เที่ยวบิน','航班'],
+  ['Flight shortlist · checked 2 November 2026','ตัวเลือกเที่ยวบิน · ตรวจสอบ 2 พฤศจิกายน 2026','航班候選 · 2026年11月2日查核'],
+  ['Flights to Kunming','เที่ยวบินไปคุนหมิง','往返昆明航班'],
+  ['Your brief: 25 December 2026–3 January 2027, nonstop flights, one checked suitcase, and the lowest total cost from Hong Kong or Shenzhen.','ความต้องการของคุณ: 25 ธันวาคม 2026–3 มกราคม 2027 เที่ยวบินตรง กระเป๋าโหลด 1 ใบ และราคารวมต่ำที่สุดจากฮ่องกงหรือเซินเจิ้น','你的要求：2026年12月25日至2027年1月3日，直航、一件寄艙行李，比較香港或深圳出發的最低總費用。'],
+  ['Prices still to check','ยังต้องตรวจสอบราคา','票價尚待查詢'],
+  ['Published schedules only. Exact-date seats, fares and ticket-specific baggage are unverified; nothing is booked. All times are local (UTC+8).','อ้างอิงตารางบินที่เผยแพร่เท่านั้น ยังไม่ได้ยืนยันที่นั่ง ราคา และสัมภาระของตั๋วในวันเดินทางจริง ยังไม่ได้จอง เวลาเป็นเวลาท้องถิ่น (UTC+8)','僅供參考已公布班表；尚未確認指定日期座位、票價及個別機票行李額，亦未預訂。時間均為當地時間（UTC+8）。'],
+  ['First choice for convenience','ตัวเลือกแรกเพื่อความสะดวก','方便出行的首選'],
+  ['Hong Kong ↔ Kunming','ฮ่องกง ↔ คุนหมิง','香港 ↔ 昆明'],
+  ['China Eastern · HKG ↔ KMG','ไชน่าอีสเทิร์น · HKG ↔ KMG','中國東方航空 · HKG ↔ KMG'],
+  ['Outbound · Fri 25 Dec 2026','ขาไป · ศุกร์ 25 ธ.ค. 2026','去程 · 2026年12月25日（五）'],
+  ['Return · Sun 3 Jan 2027','ขากลับ · อาทิตย์ 3 ม.ค. 2027','回程 · 2027年1月3日（日）'],
+  ['MU9624 · nonstop','MU9624 · บินตรง','MU9624 · 直航'],
+  ['MU733 · nonstop','MU733 · บินตรง','MU733 · 直航'],
+  ['ZH9455 · nonstop','ZH9455 · บินตรง','ZH9455 · 直航'],
+  ['ZH9456 · nonstop','ZH9456 · บินตรง','ZH9456 · 直航'],
+  ['Published schedule ↗','ตารางบินที่เผยแพร่ ↗','已公布班表 ↗'],
+  ['Arrive in time to settle in before dinner; return to Hong Kong in the afternoon.','ถึงทันเข้าที่พักก่อนมื้อเย็น และกลับถึงฮ่องกงช่วงบ่าย','抵達後有時間安頓再吃晚飯；回程下午抵達香港。'],
+  ['Checked suitcase','กระเป๋าโหลดใต้ท้องเครื่อง','寄艙行李'],
+  ['Standard Economy: one bag up to 23 kg. Basic Economy: no included checked bag. Compare Standard with Basic plus prepaid baggage.','ชั้นประหยัด Standard: กระเป๋า 1 ใบ ไม่เกิน 23 กก. ชั้น Basic: ไม่รวมกระเป๋าโหลด เปรียบเทียบ Standard กับ Basic บวกค่ากระเป๋าที่ซื้อล่วงหน้า','標準經濟艙：一件不超過23公斤。基礎經濟艙：不包寄艙行李。比較標準票價與基礎票價加預購行李費。'],
+  ['Compare Hong Kong fares ↗','เปรียบเทียบราคาจากฮ่องกง ↗','比較香港出發票價 ↗'],
+  ['Airline baggage rules ↗','กฎสัมภาระของสายการบิน ↗','航空公司行李規則 ↗'],
+  ['Alternative if the total is lower','ตัวเลือกเมื่อราคารวมถูกกว่า','總費用較低時的選擇'],
+  ['Shenzhen ↔ Kunming','เซินเจิ้น ↔ คุนหมิง','深圳 ↔ 昆明'],
+  ['Shenzhen Airlines · SZX ↔ KMG','เซินเจิ้นแอร์ไลน์ · SZX ↔ KMG','深圳航空 · SZX ↔ KMG'],
+  ['Daytime departures suit a border crossing with luggage. Add the journey to and from Shenzhen Airport when comparing.','เที่ยวบินกลางวันเหมาะกับการข้ามแดนพร้อมกระเป๋า อย่าลืมรวมเวลาและค่าเดินทางไปกลับสนามบินเซินเจิ้น','日間航班較方便攜行李過關。比較時須計入往返深圳機場的交通。'],
+  ['Domestic economy generally includes 20 kg. Confirm the ticket allowance; a 23 kg suitcase may cost extra.','ชั้นประหยัดภายในประเทศโดยทั่วไปให้กระเป๋าโหลด 20 กก. ตรวจสอบตั๋วที่เลือก หากกระเป๋าหนัก 23 กก. อาจมีค่าใช้จ่ายเพิ่ม','國內經濟艙一般包20公斤；以所選機票為準。23公斤行李可能須另付費。'],
+  ['Compare Shenzhen fares ↗','เปรียบเทียบราคาจากเซินเจิ้น ↗','比較深圳出發票價 ↗'],
+  ['Which would I choose?','ควรเลือกแบบไหน?','我會怎樣選？'],
+  ['Keep Hong Kong as the default. Consider Shenzhen if it saves at least HK$600 per person return after baggage and airport transport. This is a suggested convenience threshold, not a fare quote.','เลือกฮ่องกงเป็นหลัก พิจารณาเซินเจิ้นหากประหยัดอย่างน้อยคนละ HK$600 ไปกลับ หลังรวมค่ากระเป๋าและรถไปสนามบินแล้ว ตัวเลขนี้เป็นเกณฑ์แนะนำเพื่อชั่งความสะดวก ไม่ใช่ราคาตั๋ว','以香港為首選。如計入行李及機場交通後，深圳來回每人至少省HK$600，再考慮深圳。這是衡量方便程度的建議門檻，並非票價。'],
+  ['For fare searches, select 25 December 2026 and 3 January 2027, one adult, nonstop, and one checked bag on both legs. Compare links open route pages; enter the dates there.','ค้นหาราคาโดยเลือก 25 ธันวาคม 2026 และ 3 มกราคม 2027 ผู้ใหญ่ 1 คน บินตรง พร้อมกระเป๋าโหลดทั้งสองขา ลิงก์เปรียบเทียบเปิดหน้ารวมเส้นทาง ให้กรอกวันที่ในหน้านั้น','查價時選2026年12月25日去、2027年1月3日回，一位成人、直航、兩程均有一件寄艙行李。比較連結會開啟航線頁，請在該頁輸入日期。'],
+  ['Total to compare = return airfare + taxes and fees + checked baggage + airport transport. No exact-date cheapest ticket has been identified. These options cover your flights; friends’ Hong Kong and Bangkok flights still need coordinating.','ราคารวมที่ใช้เทียบ = ตั๋วไปกลับ + ภาษีและค่าธรรมเนียม + กระเป๋าโหลด + รถไปกลับสนามบิน ยังไม่ได้ระบุตั๋วที่ถูกที่สุดในวันเดินทางจริง ตัวเลือกนี้สำหรับคุณ ส่วนเที่ยวบินของเพื่อนจากฮ่องกงและกรุงเทพฯ ยังต้องนัดหมายร่วมกัน','比較總費用＝來回機票＋稅費＋寄艙行李＋機場交通。尚未找出指定日期最便宜的機票。以上為你的航班選擇；朋友從香港及曼谷的航班仍須協調。'],
+  ['Your flights: Hong Kong or Shenzhen ↔ Kunming, 25 Dec–3 Jan, nonstop with a checked bag. Coordinate friends’ Bangkok and Hong Kong arrivals.','เที่ยวบินของคุณ: ฮ่องกงหรือเซินเจิ้น ↔ คุนหมิง 25 ธ.ค.–3 ม.ค. บินตรงพร้อมกระเป๋าโหลด นัดเวลาเพื่อนที่มาจากกรุงเทพฯ และฮ่องกง','你的航班：香港或深圳往返昆明，12月25日至1月3日，直航並有寄艙行李。協調朋友從曼谷及香港的抵達時間。']
+ ];
+ flightTranslations.forEach(([en,th,zh])=>{catalog[en]=th;chineseCatalog[en]=zh;});
  const catalogs={th:catalog,zh:chineseCatalog};
  const locales={en:'en-GB',th:'th-TH-u-nu-latn',zh:'zh-Hant-HK-u-nu-latn'};
  const descriptions={

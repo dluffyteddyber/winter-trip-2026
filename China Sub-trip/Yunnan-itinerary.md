@@ -1,4 +1,39 @@
-# Yunnan: food, lakes and old towns
+# Yunnan: first visit, food, lakes and Tibetan culture
+
+## Current group proposal — updated 2 November 2026
+
+The current page supersedes the original candidate below. All destinations are new to you;
+the recommendations were from a friend's family. This is a proposal for discussion, not bookings.
+
+**Kunming → Dali → Lijiang → Shangri-La → Kunming, 25 December 2026–3 January 2027.**
+
+| Date | Plan | Overnight |
+| --- | --- | --- |
+| 25 Dec | Arrive, easy city walk, group dinner; optional Dounan market | Kunming |
+| 26 Dec | Jiuxiang OR Stone Forest, not both by default | Kunming |
+| 27 Dec | Zhuanxin breakfast, train to Dali, old-town dinner | Dali |
+| 28 Dec | Xizhou and selected Erhai shore; craft/Cangshan alternatives | Dali |
+| 29 Dec | Train to Lijiang; Baisha OR Shuhe and old-town evening | Lijiang |
+| 30 Dec | Optional Jade Dragon / Blue Moon Valley; high cable car separately chosen | Lijiang |
+| 31 Dec | To Shangri-La by train, or road via officially open gorge viewpoints | Shangri-La |
+| 1 Jan | Songzanlin, Dukezong and optional Napahai, at a gentle pace | Shangri-La |
+| 2 Jan | Train back to Kunming and keep the flight buffer night | Kunming |
+| 3 Jan | Fly onwards separately as needed | — |
+
+Nine nights: 2 + 2 + 2 + 2 + 1. Four city bases, five hotel check-ins.
+The screenshot's late 2 January flight removes the buffer night and is not the default.
+
+The page explains 18 destinations with photos, seasonal notes, walking effort and group votes.
+Slower option: omit Shangri-La and add one night each to Dali and Lijiang.
+Southern alternative: rebuild around Kunming–Jianshui–Yuanyang if food and terrace photography win.
+Lugu Lake replaces Shangri-La rather than being added. Ruili and Ximeng belong to separate trips.
+
+The high and middle Tiger Leaping Gorge trails are listed in official restricted-area notices;
+this proposal does not include those treks. Only officially open visitor viewpoints are considered.
+
+[Online page and response form](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh#respond).
+
+## Original three-city candidate — retained for background only
 
 **25 December 2026–3 January 2027 · four people · 10 days / 9 nights**
 

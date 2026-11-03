@@ -17,6 +17,7 @@
 @media print{body{background:white;font-size:11px}.wrap{width:100%;max-width:none}nav,.timeline-tools,.small-button,.budget-controls,.no-print,.route-art{display:none!important}.hero{display:block;padding:20px 0}.hero h1{font-size:44px}.hero .intro{font-size:13px}.topline{padding:5px 0}.hero-facts{margin-top:15px}section{padding:24px 0}.timeline-layout{display:block}.aside{position:static;display:block;margin-top:20px}.aside-block{display:inline-block;width:45%;vertical-align:top;margin-right:4%}.day{break-inside:avoid}.day summary{padding:14px 0}.day-body{padding-bottom:15px}.day-heading h3{font-size:15px}.slots p{font-size:11px}.food-grid{gap:20px}.budget-layout{display:block}.budget-total{background:#eef1eb!important;color:var(--ink);padding:15px;print-color-adjust:exact}.budget-total .eyebrow,.budget-total .group-total{color:var(--muted)}.budget-total dl div{border-color:var(--line)}.budget-total .amount{font-size:36px}.source-list{grid-template-columns:1fr 1fr}a{color:inherit}footer{padding:15px 0}.section-head h2{font-size:27px}.checklist input{width:12px;height:12px}}
 </style>
 <link rel="stylesheet" href="trip-theme.css">
+<link rel="stylesheet" href="trip-options.css">
 </head>
 <body>
 <a href="#timeline" style="position:absolute;left:-10000px" onfocus="this.style.left='16px'" onblur="this.style.left='-10000px'">Skip to itinerary</a>
@@ -33,7 +34,7 @@
   </div>
   <div class="notice"><strong>The plan</strong><p>Yunnan chosen. Leave planned for 29–31 December. All times below are suggested local times (China / Hong Kong, UTC+8); flights, trains, hotels and tours are still to book.</p></div>
 </header>
-<nav aria-label="Itinerary sections"><div class="wrap nav-inner"><div class="nav-links"><a href="#route">Route</a><a href="#timeline">Day by day</a><a href="#food">Food</a><a href="#travel">Travel &amp; stays</a><a href="#budget">Budget</a><a href="#bookings">Bookings</a></div><button class="small-button" id="print-button" type="button">Print / save PDF ↗</button></div></nav>
+<nav aria-label="Itinerary sections"><div class="wrap nav-inner"><div class="nav-links"><a href="#route">Route</a><a href="#timeline">Day by day</a><a href="#food">Food</a><a href="#travel">Travel &amp; stays</a><a href="#flights">Flights</a><a href="#budget">Budget</a><a href="#bookings">Bookings</a></div><button class="small-button" id="print-button" type="button">Print / save PDF ↗</button></div></nav>
 <main class="wrap">
 <noscript><p class="no-js">The complete itinerary is shown below. Enable JavaScript for city filters, the adjustable budget and saved checkboxes.</p></noscript>
 <section id="route" aria-labelledby="route-heading">
@@ -142,6 +143,35 @@
   <p class="logistics-note">No exact December train service or fare is confirmed. <a href="#source-rail">Kunming route reference</a> · <a href="#source-dali-rail">Dali–Lijiang reference</a> · <a href="https://www.12306.cn/en/index.html" target="_blank" rel="noopener noreferrer">Check China Railway 12306 ↗</a></p>
   <div class="stay-grid"><div><h3>Kunming · 2 nights + 1 night</h3><p>Start centrally, around Green Lake or the old streets. Choose the final night’s location from the real flight times, rather than automatically returning to the same hotel.</p></div><div><h3>Dali · 3 nights in one place</h3><p>Stay near the old town for convenient meals and day outings. A remote lakeside hotel can be lovely, but changes the transfer plan and access to dinner.</p></div><div><h3>Lijiang · 3 quiet nights</h3><p>Prioritise heating, a quiet room and a clear pickup point. Get the hotel’s Chinese address and directions before arriving with luggage.</p></div></div>
 </section>
+<section id="flights" aria-labelledby="flights-heading">
+  <div class="section-head"><div><div class="eyebrow">Flight shortlist · checked 2 November 2026</div><h2 id="flights-heading">Flights to Kunming</h2></div><p>Your brief: 25 December 2026–3 January 2027, nonstop flights, one checked suitcase, and the lowest total cost from Hong Kong or Shenzhen.</p></div>
+  <div class="flight-status"><strong>Prices still to check</strong><p>Published schedules only. Exact-date seats, fares and ticket-specific baggage are unverified; nothing is booked. All times are local (UTC+8).</p></div>
+  <div class="flight-options">
+    <article class="flight-option" aria-labelledby="flight-hkg-heading">
+      <div class="eyebrow">First choice for convenience</div><h3 id="flight-hkg-heading">Hong Kong ↔ Kunming</h3><p class="flight-airline">China Eastern · HKG ↔ KMG</p>
+      <dl class="flight-legs">
+        <div><dt>Outbound · Fri 25 Dec 2026</dt><dd><strong>12:05 → 14:40</strong><span>MU9624 · nonstop</span><a href="https://www.flight.info/MU9624" target="_blank" rel="noopener noreferrer">Published schedule ↗</a></dd></div>
+        <div><dt>Return · Sun 3 Jan 2027</dt><dd><strong>13:50 → 16:05</strong><span>MU733 · nonstop</span><a href="https://www.flight.info/MU733" target="_blank" rel="noopener noreferrer">Published schedule ↗</a></dd></div>
+      </dl>
+      <p>Arrive in time to settle in before dinner; return to Hong Kong in the afternoon.</p>
+      <p class="flight-baggage"><strong>Checked suitcase</strong><span>Standard Economy: one bag up to 23 kg. Basic Economy: no included checked bag. Compare Standard with Basic plus prepaid baggage.</span></p>
+      <div class="flight-links"><a href="https://www.trip.com/flights/hong-kong-to-kunming/airfares-hkg-kmg/" target="_blank" rel="noopener noreferrer">Compare Hong Kong fares ↗</a><a href="https://global.ceair.com/global/en_USD/Announcement/BaggageService/FreeBaggageAllowanceandSpecifications/" target="_blank" rel="noopener noreferrer">Airline baggage rules ↗</a></div>
+    </article>
+    <article class="flight-option" aria-labelledby="flight-szx-heading">
+      <div class="eyebrow">Alternative if the total is lower</div><h3 id="flight-szx-heading">Shenzhen ↔ Kunming</h3><p class="flight-airline">Shenzhen Airlines · SZX ↔ KMG</p>
+      <dl class="flight-legs">
+        <div><dt>Outbound · Fri 25 Dec 2026</dt><dd><strong>12:50 → 15:20</strong><span>ZH9455 · nonstop</span><a href="https://www.flight.info/ZH9455" target="_blank" rel="noopener noreferrer">Published schedule ↗</a></dd></div>
+        <div><dt>Return · Sun 3 Jan 2027</dt><dd><strong>16:45 → 18:45</strong><span>ZH9456 · nonstop</span><a href="https://www.flight.info/ZH9456" target="_blank" rel="noopener noreferrer">Published schedule ↗</a></dd></div>
+      </dl>
+      <p>Daytime departures suit a border crossing with luggage. Add the journey to and from Shenzhen Airport when comparing.</p>
+      <p class="flight-baggage"><strong>Checked suitcase</strong><span>Domestic economy generally includes 20 kg. Confirm the ticket allowance; a 23 kg suitcase may cost extra.</span></p>
+      <div class="flight-links"><a href="https://www.trip.com/flights/shenzhen-to-kunming/airfares-szx-kmg/" target="_blank" rel="noopener noreferrer">Compare Shenzhen fares ↗</a><a href="https://globalpage.shenzhenair.com/zhair/cms/static/pages/wcm/static-footer/GeneralConditionsOfCarriage/baggagetransportationrules_en?language_id=102" target="_blank" rel="noopener noreferrer">Airline baggage rules ↗</a></div>
+    </article>
+  </div>
+  <div class="flight-decision"><h3>Which would I choose?</h3><p>Keep Hong Kong as the default. Consider Shenzhen if it saves at least HK$600 per person return after baggage and airport transport. This is a suggested convenience threshold, not a fare quote.</p></div>
+  <p class="logistics-note">For fare searches, select 25 December 2026 and 3 January 2027, one adult, nonstop, and one checked bag on both legs. Compare links open route pages; enter the dates there.</p>
+  <p class="logistics-note">Total to compare = return airfare + taxes and fees + checked baggage + airport transport. No exact-date cheapest ticket has been identified. These options cover your flights; friends’ Hong Kong and Bangkok flights still need coordinating.</p>
+</section>
 <section id="budget" aria-labelledby="budget-heading">
   <div class="section-head"><div><div class="eyebrow">05 / Spending room</div><h2 id="budget-heading">Budget planner</h2></div><p>Planning allowances in RMB, for four people sharing two rooms. Flights, shopping and insurance are excluded. These are not supplier quotes.</p></div>
   <div class="budget-layout">
@@ -159,7 +189,7 @@
   <div class="section-head"><div><div class="eyebrow">06 / Before you go</div><h2 id="bookings-heading">Bookings &amp; reminders</h2></div><p>Check off your own progress. Ticks stay in this browser when storage is available; they do not create reservations.</p></div>
   <div class="booking-layout">
     <div><h3>The shared list</h3><p id="check-status" role="status">0 / 8 tasks checked</p><ul class="checklist">
-      <li><label><input type="checkbox" data-task="flights"><span>Agree on meeting and onward flights<small>Hong Kong and Bangkok → KMG. Your own starting city and 3 January destination still need choosing.</small></span></label></li>
+      <li><label><input type="checkbox" data-task="flights"><span>Agree on meeting and onward flights<small>Your flights: Hong Kong or Shenzhen ↔ Kunming, 25 Dec–3 Jan, nonstop with a checked bag. Coordinate friends’ Bangkok and Hong Kong arrivals.</small></span></label></li>
       <li><label><input type="checkbox" data-task="documents"><span>Check each traveller’s entry document<small>Use the actual passport or mainland travel permit, including validity across January 2027.</small></span></label></li>
       <li><label><input type="checkbox" data-task="rooms"><span>Book four hotel stays<small>Kunming 25–27 Dec · Dali 27–30 Dec · Lijiang 30 Dec–2 Jan · Kunming 2–3 Jan. Confirm room heating.</small></span></label></li>
       <li><label><input type="checkbox" data-task="rail"><span>Verify 12306 passengers &amp; book three trains<small>Names and travel documents must match; check exact station names and sale times.</small></span></label></li>
@@ -200,6 +230,9 @@
 </main>
 <footer class="wrap"><p>YUNNAN / WINTER 2026–27<br>25 DEC — 03 JAN · FOUR FRIENDS · PART OF THE LONGER ASIA TRIP</p><p><a href="Yunnan-itinerary.md">Text itinerary ↗</a><br>Proposed schedule · prices are allowances · nothing booked by this page</p></footer>
 <script src="translations.js"></script>
+<script src="destinations-data.js"></script>
+<script src="photo-credits-data.js"></script>
+<script src="trip-options.js"></script>
 <script>
 (function(){
   'use strict';
@@ -220,7 +253,7 @@
     filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===filter)));
     days.forEach(day=>{day.hidden=filter!=='all'&&day.dataset.city!==filter;});
     const count=days.filter(day=>!day.hidden).length;
-    const label=filter==='all'?t('all places'):t('{city} overnight / departure days',{city:t(filter.charAt(0).toUpperCase()+filter.slice(1))});
+    const label=filter==='all'?t('all places'):t('{city} overnight / departure days',{city:window.YunnanCityLabel(filter)});
     visibleCount.textContent=t('{count} days · {label}',{count,label});
     updateExpandLabel();
   }
@@ -270,18 +303,18 @@
     const hotel=Number(room.value)*9/2;
     const meals=Number(food.value)*10;
     const activities=Number(activity.value);
-    const total=hotel+meals+activities+800+400;
+    const total=hotel+meals+activities+1200+600;
     renderMoney('room-output',Number(room.value));
     renderMoney('food-output',Number(food.value));
     renderMoney('activity-output',activities);
     renderMoney('hotel-total',hotel);
     renderMoney('food-total',meals);
-    renderMoney('transport-total',800);
+    renderMoney('transport-total',1200);
     renderMoney('activity-total',activities);
-    renderMoney('contingency-total',400);
+    renderMoney('contingency-total',600);
     renderMoney('person-total',total);
     renderMoneyTemplate(document.getElementById('group-total'),'{amount} for all four',{amount:total*4});
-    renderMoneyTemplate(document.querySelector('.budget-foot'),'The example adds {transport} per person for trains and shared local transport, plus {contingency} contingency. Change the allowances as quotes arrive. Two twin rooms remain an assumption.',{transport:800,contingency:400});
+    renderMoneyTemplate(document.querySelector('.budget-foot'),'The example adds {transport} per person for trains and shared local transport, plus {contingency} contingency. Change the allowances as quotes arrive. Two twin rooms remain an assumption.',{transport:1200,contingency:600});
     const date=new Intl.DateTimeFormat(i18n.locale,{dateStyle:'medium',calendar:'gregory',timeZone:'UTC'}).format(new Date(exchange.date+'T00:00:00Z'));
     document.getElementById('exchange-note').textContent=t('RMB stays primary · 1 RMB ≈ {rate} · reference rate: {date} (not live).',{rate:convertedMoney(1,4),date});
   }
@@ -305,11 +338,7 @@
   tasks.forEach(input=>input.addEventListener('change',()=>updateTasks(true)));
   document.getElementById('reset-checklist').addEventListener('click',()=>{tasks.forEach(input=>{input.checked=false;});updateTasks(true);});
   function buildCalendar(){
-    const events=[
-      ['20261213','20261214','Kunming to Dali: check train ticket release','Travel on 27 December 2026. Indicative 15-day window including travel day. Verify the station-specific sale time and current 12306 rules.'],
-      ['20261216','20261217','Dali to Lijiang: check train ticket release','Travel on 30 December 2026. Indicative 15-day window including travel day. Verify the station-specific sale time and current 12306 rules.'],
-      ['20261219','20261220','Lijiang to Kunming: check train ticket release','Travel on 2 January 2027. Indicative 15-day window including travel day. Verify the station-specific sale time and current 12306 rules.']
-    ];
+    const events=window.YunnanRouteEvents.map(e=>[e[0],e[1],e[2][i18n.language]||e[2].en,e[3][i18n.language]||e[3].en]);
     const escape=value=>value.replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
     const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
     const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Yunnan Winter Trip//Rail Reminders//EN','CALSCALE:GREGORIAN'];

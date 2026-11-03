@@ -1,12 +1,30 @@
 # Yunnan sub-trip: 25 December 2026–3 January 2027
 
-**Selected route: Kunming → Dali → Lijiang → Kunming.**
+**Current proposal, updated 2 November 2026: Kunming → Dali → Lijiang → Shangri-La → Kunming. Group vote pending.**
+
+The destination guide now includes 18 options, real credited photos, winter expectations,
+walking effort, route trade-offs, and Traditional Chinese / English / Thai controls.
+You have not visited these destinations; the pasted recommendations came from a friend's family.
+
+- [Shareable online page](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh)
+- [Friends' response form](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh#respond)
+- [Owner-only response overview](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/organiser)
+
+The online form stores names/nicknames, votes and comments in the site's D1 database.
+Responses are not displayed on the public itinerary. Organiser access requires the site
+owner's ChatGPT sign-in and server-side email authorisation. Local file drafts are browser-local;
+use the online form to submit centrally. No messages are sent automatically.
+
+The proposed nine nights are Kunming 25–26 Dec, Dali 27–28 Dec, Lijiang 29–30 Dec,
+Shangri-La 31 Dec–1 Jan and Kunming 2 Jan. Return on 3 Jan. This replaces the earlier
+three-city proposal described in the historical notes further down this file.
 
 Open [the detailed HTML itinerary](index.html) in a browser for the daily timeline,
 food ideas, transfer planning, adjustable budget and booking checklist. The page
 works locally without a server. Destination and food photos are saved in
 `assets/images`; keep the whole `assets` folder and `trip-theme.css` alongside
-`index.html`, plus `translations.js`, when copying the itinerary. The same font families as the master and
+`index.html`, plus `translations.js`, `destinations-data.js`, `photo-credits-data.js`,
+`trip-options.js` and `trip-options.css`, when copying the itinerary. The same font families as the master and
 Shanghai pages are bundled locally, with their open-font licences in `assets/fonts`.
 No remote resources are needed to display the page. Use the print button to save
 the complete itinerary as a PDF.

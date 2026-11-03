@@ -1,5 +1,34 @@
 # Sources, assumptions and booking checks
 
+## 2 November 2026 update: destination comparison and shared response form
+
+The current route proposal adds Shangri-La. The original candidate and October notes below
+remain historical context. No airline, hotel, train, attraction or driver is booked here.
+
+- [Yunnan transport department: Lijiang–Shangri-La rail, fastest indicative durations](https://jtyst.yn.gov.cn/xyxw/202608/t20260820_3635852.html).
+- [Diqing government: Shangri-La altitude and cold winter](https://diqing.gov.cn/xwzx/bmdt/202604/20260416_240121.html).
+- [Diqing government: restricted undeveloped areas including gorge high and middle trails](https://www.diqing.gov.cn/xwzx/tzgg/202602/20260228_238494.html).
+- [Kunming tourism: Jiuxiang cave geology](https://chinakunming.travel/html/150312/106.html).
+- [UNESCO: South China Karst, including Shilin](https://whc.unesco.org/en/list/1248/).
+- [Kunming: Dounan wholesale versus professional auction hours](https://m.kunming.cn/news/c/2024-09-21/13876054.shtml). Visitor access still needs confirmation.
+- [Yunnan tourism: Cangshan](https://www.visityunnanchina.com/attractions/natural-attractions/mount-cangshan).
+- [Yunnan tourism: Yuanyang, late-December to April photo season](https://www.visityunnanchina.com/node/161).
+- [Yunnan tourism: Jianshui](https://www.visityunnanchina.com/attractions/cultural-attractions/jianshui-ancient-town).
+- [Yunnan tourism: Lugu Lake](https://www.visityunnanchina.com/attractions/natural-attractions/lugu-lake). Do not treat old transfer-duration estimates as current timetables.
+- [Yunnan tourism: Fuxian Lake](https://www.visityunnanchina.com/attractions/natural-attractions/fuxian-lake).
+- [Government photo report: Shaxi, Jianchuan, Yunnan](https://english.www.gov.cn/news/202503/18/content_WS67d91959c6d0868f4e8f0ee5.html).
+- [Moli scenic operator: Ruili landscapes and cultural context](https://www.mlrdyl.cn/).
+- [Yunnan ethnic affairs commission: Ximeng / Mengsuo Longtan](https://mz.yn.gov.cn/html/2026/huanjingmei_0202/4062556.html).
+- [2026 rental guidance: temporary permit and rental documents](https://english.cq.gov.cn/specials/getaround/TaxisandCarRentals/202608/t20260807_15903930.html).
+
+Photos: `assets/image-credits.json` (original 10) and `assets/destination-photo-credits.json`
+(14 additional real-location photos). Per-photo licences, authors, capture dates and seasonal
+limitations accompany the destination cards. These photos do not predict travel-date conditions.
+
+The form is hosted using Sites and D1 rather than Google Forms. No Google account is connected.
+Only server-confirmed writes show success. Same-browser submissions update a UUID-keyed response.
+The owner dashboard requires ChatGPT sign-in and an owner-email check; the public API has no GET listing.
+
 Research date: **22 October 2026**. Links support destination and seasonal information. They do not confirm availability, timetables, fares, restaurant opening or event programmes for 25 December 2026–3 January 2027.
 
 ## Primary destination and climate references
