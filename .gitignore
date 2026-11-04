@@ -1,0 +1,23 @@
+# Carried over from the VSprojects monorepo root .gitignore (repo split, 4 Nov 2026).
+# Local secrets and credentials.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Build products, dependencies, and local caches.
+.vs/
+**/bin/
+**/obj/
+node_modules/
+__pycache__/
+.venv/
+venv/
+
+# Operating system files.
+Thumbs.db
+Desktop.ini
+.DS_Store

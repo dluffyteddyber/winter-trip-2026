@@ -1,0 +1,12 @@
+# Store text with LF line endings so Windows and Codespaces (Linux) edits diff cleanly.
+* text=auto
+
+# Preserve the original bytes of case documents and archived messages.
+*.pdf binary
+*.mbox binary
+
+# Images and fonts are never text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.woff2 binary
