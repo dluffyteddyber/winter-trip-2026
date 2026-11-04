@@ -292,13 +292,13 @@ section{display:grid;gap:14px;min-width:0}
         food:[['排骨藕汤',tr('lotus-root soup','')],['武昌鱼',tr('Wuchang bream','')]]};
       d[ix(12)] = {s:tr('Wuhan','武汉'), c:'--c-trip', sleep:'wh',
         t:tr('Slow Wuhan day','武汉慢遊'),
-        n:tr('The old lanes and cafés of Tanhualin 昙华林, or whatever the family fancies. Keat lands in Hong Kong today, a day before you.',
-             '逛昙华林老街和咖啡店，或跟家人隨意走走。Keat 今天抵達香港，比你早一天。'),
+        n:tr('The old lanes and cafés of Tanhualin 昙华林, or whatever the family fancies. Keat now arrives in Hong Kong on 16 Dec at 13:20.',
+             '逛昙华林老街和咖啡店，或跟家人隨意走走。Keat 改為12月16日13:20抵達香港。'),
         food:[['周黑鸭',tr('spicy duck neck','')]]};
       d[ix(13)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', sleep:'hk',
         t:tr('Train to Hong Kong with the family','與家人坐高鐵去香港'),
-        n:tr('Wuhan to Hong Kong West Kowloon is about 4.5 h by high-speed train. Meet Keat. Remote work starts tomorrow evening.',
-             '武汉到香港西九龍高鐵約 4.5 小時。和 Keat 會合。明晚開始遠程工作。'), food:[]};
+        n:tr('Wuhan to Hong Kong West Kowloon is about 4.5 h by high-speed train. Keat arrives on 16 Dec. Remote work starts tomorrow evening.',
+             '武汉到香港西九龍高鐵約 4.5 小時。Keat 16日才抵達。明晚開始遠程工作。'), food:[]};
     } else if (state.da==='sh'){
       d[ix(9)] = {s:tr('Hangzhou','杭州'), c:'--c-trip', trip:true, leave:true, sleep:'hz',
         t:tr('Hangzhou · 1 night','杭州 · 住一晚'),
@@ -318,13 +318,13 @@ section{display:grid;gap:14px;min-width:0}
         food:[['盐水鸭',tr('Nanjing salted duck','')],['小笼包',tr('soup dumplings','')]]};
       d[ix(12)] = {s:tr('Shanghai','上海'), c:'--c-me', sleep:'sh',
         t:tr('Last Shanghai day','上海最後一天'),
-        n:tr('Pack, shop, and see Lujiazui 陆家嘴 lit up at night. Keat lands in Hong Kong today, a day before you.',
-             '收拾行李、購物，晚上看陆家嘴夜景。Keat 今天抵達香港，比你早一天。'),
+        n:tr('Pack, shop, and see Lujiazui 陆家嘴 lit up at night. Keat now arrives in Hong Kong on 16 Dec at 13:20.',
+             '收拾行李、購物，晚上看陆家嘴夜景。Keat 改為12月16日13:20抵達香港。'),
         food:[['生煎包',tr('pan-fried buns','')]]};
       d[ix(13)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', sleep:'hk',
         t:tr('Fly to Hong Kong','飛香港'),
-        n:tr('About 2.5 h. The family arrives from Wuhan the same day. Meet Keat. Remote work starts tomorrow evening.',
-             '約 2.5 小時。家人同日從武汉到。和 Keat 會合。明晚開始遠程工作。'), food:[]};
+        n:tr('About 2.5 h. The family arrives from Wuhan the same day. Keat arrives on 16 Dec. Remote work starts tomorrow evening.',
+             '約 2.5 小時。家人同日從武汉到。Keat 16日才抵達。明晚開始遠程工作。'), food:[]};
     } else {
       d[ix(9)] = {s:tr('→ HK','→ 香港'), c:'--c-travel', leave:true, sleep:'hk',
         t:tr('Fly to Hong Kong','飛香港'),
@@ -338,7 +338,7 @@ section{display:grid;gap:14px;min-width:0}
       d[ix(11)] = {s:tr('Hong Kong','香港'), c:'--c-me', leave:true, sleep:'hk',
         t:tr('Hong Kong, on leave','在香港放假'), n:tr('Last day of annual leave.','年假最後一天。'), food:[]};
       d[ix(12)] = {s:tr('HK · Keat','香港 · Keat'), c:'--c-keat', sleep:'hk',
-        t:tr('Keat lands','Keat 抵達'), n:tr('You\'re already there to meet Keat.','你已在香港，可以接 Keat。'), food:[]};
+        t:tr('Hong Kong day','香港活動日'), n:tr('Keat now arrives on 16 Dec at 13:20.','Keat 改為12月16日13:20抵達。'), food:[]};
       d[ix(13)] = {s:tr('HK · Keat','香港 · Keat'), c:'--c-keat', sleep:'hk',
         t:tr('Family arrives from Wuhan','家人從武汉到'),
         n:tr('姨媽, 亮 and 许嵩 arrive from Wuhan. Remote work starts tomorrow evening.','姨媽、亮和许嵩從武汉到。明晚開始遠程工作。'), food:[]};
@@ -422,21 +422,16 @@ section{display:grid;gap:14px;min-width:0}
       seg('fr',ix(8),ix(12),tr('Shanghai (optional)','上海（可選）'),'--c-frankie',true,tr('Optional: joins you in Shanghai 12.8–12.12','可選：12.8–12.12 來上海'));
       seg('fr',ix(13),ix(13),place('hk'),'--c-frankie',false,tr('Back in Hong Kong','回香港'));
     } else seg('fr',0,N-1,tr('Hong Kong · base','香港 · 基地'),'--c-frankie',false,tr('Frankie is based in Hong Kong from 11.26 to 1.9','Frankie 11.26 至 1.9 在香港'));
-    seg('keat',ix(12),ix(13),tr('HK from 12.12','12.12 起在香港'),'--c-keat',true,tr('Keat visits Hong Kong 12.12–12.18','Keat 12.12–12.18 來香港'));
+    // Keat’s revised 16–22 Dec visit is after this 3–13 Dec chart.
 
     tl.innerHTML = h.join('');
   }
 
   function renderText(d){
-    var clash = hkDay()>ix(12);
+    var clash = false;
     var al = document.getElementById('keat-alert');
-    al.className = 'alert'+(clash?'':' ok');
-    al.innerHTML = clash
-      ? '<b>'+esc(tr('Date clash: Keat lands in Hong Kong on 12.12, you get there on 12.13','日期衝突：Keat 12.12 抵達香港，你 12.13 才到'))+'</b><span>'+
-        esc(tr('Keat would spend a day in Hong Kong without you. Ask Keat to land on 12.13, or switch to HK first above. The main page lets you move Keat\'s dates.',
-               'Keat 會獨自在香港一天。請 Keat 改到 12.13 抵達，或在上面選「先去香港」。主頁可以調整 Keat 的日期。'))+'</span>'
-      : '<b>'+esc(tr('No clash: you reach Hong Kong on 12.9, and Keat lands on 12.12','沒有衝突：你 12.9 到香港，Keat 12.12 抵達'))+'</b><span>'+
-        esc(tr('You have three days in Hong Kong to settle in before Keat arrives.','Keat 到之前你有三天在香港安頓。'))+'</span>';
+    al.className = 'alert ok';
+    al.innerHTML = '<b>'+esc(tr('Keat’s visit is now 16–22 December','Keat 的新日期是12月16–22日'))+'</b><span>'+esc(tr('Arrival 16 Dec 13:20; departure 22 Dec 13:30, Hong Kong time. All three routes reach Hong Kong before Keat arrives.','16日13:20抵達，22日13:30離開，均為香港時間。三條路線都在 Keat 抵達前到香港。'))+'</span>';
 
     var AFTER = {wuhan:[tr('Wuhan 12.9–12.12','武汉 12.9–12.12'),'武汉 → 香港'], hk:[tr('Hong Kong from 12.9','12.9 起在香港'),'香港'], sh:[tr('Shanghai until 12.13','留上海至 12.13'),'香港']}[state.da];
     document.getElementById('f-after').textContent = AFTER[0];
@@ -474,8 +469,7 @@ section{display:grid;gap:14px;min-width:0}
         p:tr('The family goes to Wuhan on 12.9 and reaches Hong Kong on 12.13. Join them, go ahead to Hong Kong, or stay around Shanghai. This is the same choice as on the main page.',
              '家人 12.9 去武汉，12.13 到香港。你可以同去、先去香港，或留在上海周边。和主頁是同一個選擇。')}
     ];
-    if (clash) decs.push({c:'clash',l:tr('Clash','衝突'),h:tr('Keat\'s arrival','Keat 的抵達日'),
-      p:tr('Keat lands on 12.12, and you reach Hong Kong on 12.13. Move Keat a day later, or go to Hong Kong first.','Keat 12.12 抵達，你 12.13 才到香港。請 Keat 晚一天，或你先去香港。')});
+
     decs.push(
       {c:'open',l:OPEN,h:'Frankie',p:frNote},
       {c:'open',l:OPEN,h:tr('Meeting Calvin 曾致','和 Calvin（曾致）見面'),

@@ -1,5 +1,11 @@
 # Sources, assumptions and booking checks
 
+## 3 November 2026: user-supplied Kunming / Dali screenshot
+
+The same screenshot was attached twice and has been incorporated once. Its hotel name, RMB413/night quote, airport estimate, park directions, rooftop views, markets, train reference (18:38–20:46, RMB145 under 26 Dec), east-shore Dali stay, cycling stops, quoted 129 km wider route, kayaking and Luwoshan sunset ideas are transcribed in the current section of `Yunnan-itinerary.md` and in all three languages on the page.
+
+These are user-supplied notes, not new web verification or booking confirmations. The 26 Dec evening train conflicts with the main route's 27 Dec transfer; it is an alternative requiring accommodation/date changes. The airport is unspecified, the quoted distance/time needs checking, and the 129 km figure is not treated as a verified ecological-corridor length or a daily cycling distance. Professional flower-auction access remains distinct from evening wholesale-market trading. The group vote and later route dates are retained.
+
 ## 2 November 2026 update: destination comparison and shared response form
 
 The current route proposal adds Shangri-La. The original candidate and October notes below

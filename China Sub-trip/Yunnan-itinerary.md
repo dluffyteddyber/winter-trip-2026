@@ -1,6 +1,6 @@
 # Yunnan: first visit, food, lakes and Tibetan culture
 
-## Current group proposal — updated 2 November 2026
+## Current group proposal — updated 3 November 2026
 
 The current page supersedes the original candidate below. All destinations are new to you;
 the recommendations were from a friend's family. This is a proposal for discussion, not bookings.
@@ -9,10 +9,10 @@ the recommendations were from a friend's family. This is a proposal for discussi
 
 | Date | Plan | Overnight |
 | --- | --- | --- |
-| 25 Dec | Arrive, easy city walk, group dinner; optional Dounan market | Kunming |
-| 26 Dec | Jiuxiang OR Stone Forest, not both by default | Kunming |
-| 27 Dec | Zhuanxin breakfast, train to Dali, old-town dinner | Dali |
-| 28 Dec | Xizhou and selected Erhai shore; craft/Cangshan alternatives | Dali |
+| 25 Dec | Arrive; proposed Boyue Hotel near Dianchi / Haigeng Park, easy dinner | Kunming |
+| 26 Dec | Zhuanxin snacks, Dianchi / Haihong Wetland / Haigeng parks, optional Dounan; Jiuxiang OR Stone Forest can replace the day | Kunming |
+| 27 Dec | Zhuanxin if not already visited, train to Dali, proposed east-shore stay and old-town dinner | Dali |
+| 28 Dec | Selected west-shore cycling stops and Xizhou; kayaking, east-shore driver / Luwoshan sunset, craft or Cangshan alternatives | Dali |
 | 29 Dec | Train to Lijiang; Baisha OR Shuhe and old-town evening | Lijiang |
 | 30 Dec | Optional Jade Dragon / Blue Moon Valley; high cable car separately chosen | Lijiang |
 | 31 Dec | To Shangri-La by train, or road via officially open gorge viewpoints | Shangri-La |
@@ -23,6 +23,18 @@ the recommendations were from a friend's family. This is a proposal for discussi
 Nine nights: 2 + 2 + 2 + 2 + 1. Four city bases, five hotel check-ins.
 The screenshot's late 2 January flight removes the buffer night and is not the default.
 
+### New screenshot notes — supplied 3 November 2026
+
+These are the user's supplied suggestions and reference prices, not verified availability or confirmed bookings. The duplicate screenshot is recorded once.
+
+- **Kunming, 25–26 December:** 昆明泊月酒店（滇池海埂公园店）, Boyue Hotel near Dianchi / Haigeng Park, **RMB413/night**. Room type, whether per room or per person, inclusions and booking status are unspecified. Do not insert this directly into the per-person budget. The notes quote an airport transfer of **41 minutes / 17 km**, without naming the airport or route; recheck that estimate before arranging transport.
+- **Lakefront:** notes describe walking left from the hotel to **Haihong Wetland Park 海洪濕地公園**, right to **Haigeng Park 海埂公園**, with rooftop sunrise, sunset, Dianchi and red-billed-gull views. Confirm location, walking access and rooftop access; wildlife and views depend on conditions.
+- **Food and flowers:** **Zhuanxin Farmers' Market 篆新農貿市場** for snacks; **Dounan Flower Market 斗南鮮花市** in the evening. The request to see live bidding at the cut-flower trading centre is kept, with professional auction sessions and visitor access to check separately from evening wholesale trading.
+- **Train reference:** Kunming → Dali, **18:38–20:46**, about **2h08**, **RMB145**, shown under **26 December**. Exact date, train number, stations, seat class and fare are unconfirmed. The current route still transfers on **27 December**. Treat the 26th evening departure as an alternative requiring a revised second Kunming night and Dali accommodation; do not combine it with Dounan that evening or assume these times apply on the 27th.
+- **Dali, 27–29 December:** proposed **Erhai east-shore** accommodation, no hotel or price supplied. Current main route checks in on the 27th and out towards Lijiang on the 29th. Compare lake views against the old-town base; allow transfers to the west shore and old-town meals.
+- **Cycling route notes:** the screenshot describes the ecological corridor from **Yangnanxi 陽南溪** north along Erhai's west shore to **Xizhou Taoyuan Pier 喜洲桃源碼頭**, quoting **about 129 km** overall. Retain this as the source's wider-route description, not a verified corridor length or a day's cycling target. Named highlights: **Yangnanxi → Longkan Pier 龍龕碼頭 → Caicun Pier 才村碼頭 → Panxi S-bend 磻溪S灣 → Xizhou Old Town 喜洲古鎮**. Choose a short section.
+- **Optional Dali activities:** kayaking, Erhai cycling, a hired car along the east shore, **Luwoshan 鹿臥山 sunset**, and old-town food in the evening. These are choices across the stay, not a requirement to fit everything into one day. Confirm the Luwoshan location/access and activity providers before booking.
+
 The page explains 18 destinations with photos, seasonal notes, walking effort and group votes.
 Slower option: omit Shangri-La and add one night each to Dali and Lijiang.
 Southern alternative: rebuild around Kunming–Jianshui–Yuanyang if food and terrace photography win.
@@ -31,7 +43,7 @@ Lugu Lake replaces Shangri-La rather than being added. Ruili and Ximeng belong t
 The high and middle Tiger Leaping Gorge trails are listed in official restricted-area notices;
 this proposal does not include those treks. Only officially open visitor viewpoints are considered.
 
-[Online page and response form](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh#respond).
+[Online page and response form](https://yunnan-winter-2026-friends.dakee.chatgpt.site/trip/index.html?lang=zh#respond).
 
 ## Original three-city candidate — retained for background only
 

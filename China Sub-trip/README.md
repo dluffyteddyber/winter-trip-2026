@@ -1,14 +1,16 @@
 # Yunnan sub-trip: 25 December 2026–3 January 2027
 
-**Current proposal, updated 2 November 2026: Kunming → Dali → Lijiang → Shangri-La → Kunming. Group vote pending.**
+**Current proposal, updated 3 November 2026: Kunming → Dali → Lijiang → Shangri-La → Kunming. Group vote pending.**
+
+The new screenshot notes are included in the daily plan and travel/stay guidance: proposed Boyue Hotel (RMB413/night reference), Dianchi parks and rooftop views, Zhuanxin and Dounan, an alternative 26 Dec evening train, an Erhai east-shore stay and selected cycling / kayaking / Luwoshan sunset ideas. The main route still transfers to Dali on 27 Dec; no bookings are marked confirmed. See the current section of [Yunnan-itinerary.md](Yunnan-itinerary.md) for the source details and date conflict.
 
 The destination guide now includes 18 options, real credited photos, winter expectations,
 walking effort, route trade-offs, and Traditional Chinese / English / Thai controls.
 You have not visited these destinations; the pasted recommendations came from a friend's family.
 
-- [Shareable online page](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh)
-- [Friends' response form](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/trip/index.html?lang=zh#respond)
-- [Owner-only response overview](https://yunnan-winter-2026-friends.umbercacao.chatgpt.site/organiser)
+- [Shareable online page](https://yunnan-winter-2026-friends.dakee.chatgpt.site/trip/index.html?lang=zh)
+- [Friends' response form](https://yunnan-winter-2026-friends.dakee.chatgpt.site/trip/index.html?lang=zh#respond)
+- [Owner-only response overview](https://yunnan-winter-2026-friends.dakee.chatgpt.site/organiser)
 
 The online form stores names/nicknames, votes and comments in the site's D1 database.
 Responses are not displayed on the public itinerary. Organiser access requires the site

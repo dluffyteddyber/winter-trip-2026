@@ -13,20 +13,20 @@ Planning updated: **22 October 2026**, to match the main [winter-trip.html](../w
 - **Calvin 曾致:** Calvin works in Shanghai and has one free weekday, pencilled in for Mon 7 Dec.
 - **Frankie:** Frankie is based in Hong Kong and may join you in Shanghai from Tue 8 Dec (optional).
 - **Wed 9 Dec:** 红 flies out of Pudong at 15:25 (CZ6544). 姨媽, 亮 and 许嵩 take the train to **Wuhan 武汉** for 12.9–12.12.
-- **Sat 12 Dec:** Keat lands in Hong Kong for a week.
+- **Wed 16–Tue 22 Dec:** Keat visits Hong Kong; arrival 16 Dec 13:20, departure 22 Dec 13:30 (revised). See [Keat’s visit page](../Keat%20Subtrip/index.html).
 - **Sun 13 Dec:** the family reaches Hong Kong. Remote work starts on Mon 14 Dec.
 
 ## The main decision: after Shanghai, where do you go?
 
 The main page has the same switch: **Wuhan / HK first / Stay in SH**.
 
-| Option | 12.9–12.12 | You reach Hong Kong | Keat (lands 12.12) |
+| Option | 12.9–12.12 | You reach Hong Kong | Keat (lands 12.16, 13:20) |
 | --- | --- | --- | --- |
-| **Wuhan with the family** (main page default) | Wuhan with 姨媽, 亮, 许嵩 | 12.13, by train (~4.5 h) | One-day clash |
+| **Wuhan with the family** (main page default) | Wuhan with 姨媽, 亮, 许嵩 | 12.13, by train (~4.5 h) | No clash |
 | **Hong Kong first** | Settle in Hong Kong while still on leave | 12.9, by air (~2.5 h) | No clash |
-| **Stay in Shanghai** | Hangzhou night, Nanjing or city days, with Frankie if Frankie comes | 12.13, by air | One-day clash |
+| **Stay in Shanghai** | Hangzhou night, Nanjing or city days, with Frankie if Frankie comes | 12.13, by air | No clash |
 
-**My take:** Wuhan keeps you with the family for the whole of your leave, which is what the main plan is built around. The cost is the one-day Keat clash, so ask Keat whether landing on 12.13 works. Choose Hong Kong first if Keat's dates can't move. Staying in Shanghai only makes sense if Frankie is definitely coming.
+**Updated 4 November:** Keat now arrives on 16 December at 13:20 and leaves on 22 December at 13:30. All three options reach Hong Kong before the revised visit, so Keat's arrival no longer drives the Shanghai/Wuhan decision. Wuhan keeps you with the family through the planned leave; the Shanghai option still depends on Frankie's plans.
 
 ## Read the plans
 

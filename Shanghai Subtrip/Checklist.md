@@ -30,7 +30,7 @@ Planning date: **22 October 2026**, matched to the main [winter-trip.html](../wi
 ## Decide
 
 - [ ] **After Shanghai:** Wuhan, Hong Kong first, or stay in Shanghai. See the [README](README.md#the-main-decision-after-shanghai-where-do-you-go).
-- [ ] **Keat:** lands in Hong Kong on 12.12. With Wuhan or Shanghai you arrive on 12.13, so ask whether Keat can land a day later.
+- [ ] **Keat:** revised visit 16–22 December; arrival 16 Dec 13:20, departure 22 Dec 13:30. Add flight/terminal and transfer details in the [new visit page](../Keat%20Subtrip/index.html). The old one-day arrival clash is resolved.
 - [ ] **Frankie:** the optional Shanghai stay from 12.8 only lines up fully with the stay-in-Shanghai option.
 - [ ] **Calvin:** 12.7 or 12.8, while the family is still in Shanghai.
 

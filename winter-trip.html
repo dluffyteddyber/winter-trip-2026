@@ -219,6 +219,7 @@ section{display:grid;gap:14px;min-width:0}
     </dl>
     <nav class="subtrips" aria-label="Sub-trips">
       <a data-sub="sh" target="_blank" rel="noopener"><span class="k" data-en="Sub-trip · Shanghai" data-zh="分行程 · 上海"></span><b data-en="上海 Shanghai · 12.5 – 12.13" data-zh="上海 · 12.5 – 12.13"></b><span class="go" data-en="Open plan →" data-zh="打開計劃 →"></span></a>
+      <a data-sub="keat" target="_blank" rel="noopener"><span class="k" data-en="Keat · Revised Hong Kong visit" data-zh="Keat · 香港相聚新日期"></span><b data-en="16–22 Dec · 13:20 in / 13:30 out" data-zh="12.16–22 · 13:20抵達 / 13:30離開"></b><span class="go" data-en="Open visit page →" data-zh="打開相聚計劃 →"></span></a>
       <a data-sub="cn" target="_blank" rel="noopener"><span class="k" data-en="Sub-trip · China trip" data-zh="分行程 · 中國遊"></span><b data-en="雲南 Yunnan · 12.25 – 1.3" data-zh="雲南 · 12.25 – 1.3"></b><span class="go" data-en="Open plan →" data-zh="打開計劃 →"></span></a>
     </nav>
   </header>
@@ -322,6 +323,7 @@ section{display:grid;gap:14px;min-width:0}
 
   // Sub-trip pages: the local file when opened from the folder, the published page online.
   var SUB = {sh:['Shanghai%20Subtrip/shanghai-subtrip.html','https://claude.ai/artifact/2E6SUdUdGXHNQkU5mnFTXE'],
+             keat:['Keat%20Subtrip/index.html','https://keat-hong-kong-december-2026.dakee.chatgpt.site'],
              cn:['China%20Sub-trip/index.html','https://claude.ai/artifact/DY4Ty75F4qNxR89s2g4jRv']};
   function subHref(k){ return SUB[k][location.protocol==='file:' ? 0 : 1]; }
   document.querySelectorAll('[data-sub]').forEach(function(a){ a.href=subHref(a.getAttribute('data-sub')); });
@@ -365,12 +367,12 @@ section{display:grid;gap:14px;min-width:0}
     {id:'hong', name:'红', sub:['Family','家人'], c:'--c-hong', legs:[
       ['Shanghai','上海','CZ6543 lands PVG 14:20 · CZ6544 leaves PVG 15:25 on the last day','CZ6543 14:20 抵達浦東 · 最後一天 CZ6544 15:25 浦東起飛']]},
     {id:'keat', name:'Keat', sub:['Friend','朋友'], c:'--c-keat', tent:true, legs:[
-      ['Hong Kong','香港','Keat visiting Hong Kong','Keat 來香港']]}
+      ['Hong Kong','香港','Revised: arrives 16 Dec 13:20; departs 22 Dec 13:30 (Hong Kong time)','新日期：12月16日13:20抵達；22日13:30離開（香港時間）']]}
   ];
   // Frankie: optional Shanghai stay, can join your China trip, then Hong Kong.
   var DEF = {da:'wuhan', shLen:4, routeLen:4, chinaStart:ix(12,25), chinaLen:10,
     p:{ming:{start:ix(12,3),lens:[6,4,4]}, liang:{start:ix(12,3),lens:[6,4,35]}, xs:{start:ix(12,3),lens:[6,4,4]}, hong:{start:ix(12,5),lens:[5]},
-       keat:{start:ix(12,12),lens:[7]}},
+       keat:{start:ix(12,16),lens:[7]}}, keatRevision:'2026-11-04',
     v:2, fr:{sh:true, shStart:ix(12,8), shLen:5, china:true, hkStart:ix(11,26), hkEnd:ix(1,9)},
     cal:{on:true, day:ix(12,7)},  // Calvin (曾致): works in Shanghai, free one weekday
     th:{lot:{on:true,s:0,e:0}, top:{on:true,s:0,e:0}},  // Lot and Top: join the China trip; s/e = days joined late / left early
@@ -419,6 +421,10 @@ section{display:grid;gap:14px;min-width:0}
       });
     }
   }catch(e){}
+
+  // Apply the revised visit once without resetting anyone else's saved plans.
+  if (!s || s.keatRevision!==DEF.keatRevision) state.p.keat=clone(DEF.p.keat);
+  state.keatRevision=DEF.keatRevision;
 
   // Display names: [English, Chinese]. An empty edit falls back to the default.
   var NAME_DEF = {me:['Da','達'], ming:['Ming','小明'], liang:['亮','亮'], xs:['许嵩','许嵩'], hong:['红','红'],
